@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ##pizn.github.com
 
 这是 <a href="http://www.zhanxin.info" target="_blank" title="掌心">zhanxin.info</a> 在 GitHub 上使用 <a href="http://jekyllrb.com" target="_blank" >Jekyll</a> 搭建的个人博客的所有源代码。该博客的目的 用来<strong>快速</strong>记录工作，学习，生活的一点一滴。更多分享，更多交流，更多进步。
@@ -25,3 +26,6 @@ pizn.github.com 上的文章采用<a href="http://creativecommons.org/licenses/b
 邮箱: zhanxin.info@gmail.com
 
 
+=======
+# myblog
+>>>>>>> d4e1e6e44aa564c29db70466d1a75e4d9845ac96
