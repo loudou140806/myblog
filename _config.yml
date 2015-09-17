@@ -42,7 +42,7 @@ timezone:      null
 title: Simple
 subTitle: Just a simple Jekyll blog.
 description: 这是 Frank 的第一个博客，它是基于 Jekyll 搭建起来的。在这里，用来记录我想要记录的时刻。
-url: "http://loudou140806.github.io/myblog"
+url: "https://loudou140806.github.io/myblog"
 feed: /atom.xml
 
 #菜单配置
@@ -63,10 +63,10 @@ themes: /themes/violet
 
 #配置你喜欢的顶部背景图片
 headimg:
-  - item: ../themes/violet/images/hdbg01.jpg
-  - item: ../themes/violet/images/hdbg02.jpg
-  - item: ../themes/violet/images/hdbg03.jpg
-  - item: ../themes/violet/images/hdbg04.jpg
+  - item: themes/violet/images/hdbg01.jpg
+  - item: themes/violet/images/hdbg02.jpg
+  - item: themes/violet/images/hdbg03.jpg
+  - item: themes/violet/images/hdbg04.jpg
 
 #关注我
 follow:
