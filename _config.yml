@@ -70,22 +70,22 @@ headimg:
 
 #关注我
 follow:
-  - class: fa-google-plus
-    url: http://www.zhanxin.info
-  - class: fa-facebook
-    url: http://www.zhanxin.info
+  # - class: fa-google-plus
+  #   url: http://www.zhanxin.info
+  # - class: fa-facebook
+  #   url: http://www.zhanxin.info
   - class: fa-github
-    url: http://github.com/pizn
+    url: http://github.com/loudou140806
   - class: fa-weibo
-    url: http://weibo.com/pizner
-  - class: fa-renren
-    url: http://www.zhanxin.info
-  - class: fa-pinterest
-    url: http://www.zhanxin.info
-  - class: fa-twitter
-    url: http://www.zhanxin.info
-  - class: fa-rss
-    url: http://www.zhanxin.info
+    url: http://weibo.com/2391737244/profile?rightmod=1&wvr=6&mod=personinfo
+  # - class: fa-renren
+  #   url: http://www.zhanxin.info
+  # - class: fa-pinterest
+  #   url: http://www.zhanxin.info
+  # - class: fa-twitter
+  #   url: http://www.zhanxin.info
+  # - class: fa-rss
+  #   url: http://www.zhanxin.info
 
 #作者信息
 author:
@@ -93,10 +93,6 @@ author:
   img: http://tp2.sinaimg.cn/1832671293/180/40020872447/1
 
 #评论信息
-disqus:
-  config: false
-  id: loudou140806
-
 duoshuo:
   config: true
   id: loudou140806
