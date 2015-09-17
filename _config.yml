@@ -39,10 +39,10 @@ timezone:      null
 
 
 #站点基础配置
-title: Violet
-subTitle: Just another Jekyll blog.
-description: 这是 PIZn 的又一个博客，它是基于 Jekyll 搭建起来的。在这里，不仅仅是用来快速记录工作，学习，生活的一点一滴的地方，更是 PIZn 对 Jekyll 的学习和使用的一次有意义的实践。
-url: http://pizn.github.io
+title: Simple
+subTitle: Just a simple Jekyll blog.
+description: 这是 Frank 的第一个博客，它是基于 Jekyll 搭建起来的。在这里，用来记录我想要记录的时刻。
+url: http://loudou140806.github.io/myblog
 feed: /atom.xml
 
 #菜单配置
@@ -94,9 +94,9 @@ author:
 
 #评论信息
 disqus:
-  config: true
-  id: piznblog
+  config: false
+  id: loudou140806
 
 duoshuo:
-  config: false
-  id: zhanxin
+  config: true
+  id: loudou140806

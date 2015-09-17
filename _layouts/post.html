@@ -25,15 +25,15 @@ comment: true
     </div>
 </nav>
 <div class="comment">
-    {% if site.disqus.config %}
+ <!--    {% if site.disqus.config %}
         <div class="comment-cnt">
             <div id="disqus_thread"></div>
         </div>
-    {% else %}
+    {% else %} -->
         {% if site.duoshuo.config %}
         <div class="comment-cnt">
-            <div class="ds-thread"></div>
+            <div class="ds-thread" data-thread-key="{{ page.title }}" data-title="{{ page.title }}"></div>
         </div>
         {% endif %}
-    {% endif %}
+    <!-- {% endif %} -->
 </div>
