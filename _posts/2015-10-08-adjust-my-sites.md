@@ -33,8 +33,6 @@ title: 站点调试
 
 <img src="{{ site.url }}/images/post/2015-10-08/6.png" width="300px"/>
 
-
-
 ##github服务器上的调试
 
 进入<a href="https://loudou140806.github.com/myblog">https://loudou140806.github.com/myblog</a>,没有问题，一切运行正常，但是在点击进入文章时出现404页面
