@@ -1,0 +1,30 @@
+#main{width: 100%}
+#head{width: 100%;height: 20px;background: #ccc;}
+.head_login{width: 960px;height: 20px;margin: 0 auto;font: 12px/20px "微软雅黑";color: #666;position: relative;}
+.login_register{position: absolute;right: 0;width: 100px;height: 20px;top: 0;display: block;}
+.login_register a {text-decoration: none;color: #fff;margin-left: 20px;width: 24px;float: left;}
+
+/*登录界面开始*/
+.login,.login2{z-index:10;position: absolute;width: 360px; height: 320px;background: #fff;opacity: 0;filter(opacity: 0);border-radius: 5px;background: #f90;}
+.header_denglu,.header2_denglu{height: 20px;}
+#close {position: absolute;right: 0;top: 0;border-left:1px solid #999; width: 40px;height: 20px;text-align: center;text-decoration: none;font-weight: 900;font-size: 20px;color: #999;}
+#close2 {position: absolute;right: 0;top: 0;border-left:1px solid #999; width: 40px;height: 20px;text-align: center;text-decoration: none;font-weight: 900;font-size: 20px;color: #999;}
+#close:hover{background: -webkit-linear-gradient(top, red 0,white 100%);color: #fff;}
+#close2:hover{background: -webkit-linear-gradient(top, red 0,white 100%);color: #fff;}
+#other_login,#other_login2{width: 260px;height:200px;position: relative;margin: 20px auto;}
+.form_inner span{width: 260px;height:50px;margin: 20px auto;line-height: 50px;color: #999;font-family: "微软雅黑"}
+.form_inner2 span{width: 260px;height:50px;margin: 20px auto;line-height: 50px;color: #999;font-family: "微软雅黑"}
+.form_inner,.form_inner2 {width: 260px;height: 150px;}
+.username_out,.password_out,.submit,.username_out2,.password_out2,.submit2{width: 260px;height: 50px;}
+.username,.password,.username2,.password2{width:260px;height:40px;border-radius:3px;border:1px solid #ccc;color: #999;}
+.form_inner div input{border:none;padding: 10px 25px 10px; width: 210px;height: 20px;color: #ccc;font-size: 16px;font-family: "微软雅黑"}
+.form_inner2 div input{border:none;padding: 10px 25px 10px; width: 210px;height: 20px;color: #ccc;font-size: 16px;font-family: "微软雅黑"}
+.login_button,.login_button2{width: 90px;height: 36px;background: #7DC72C;letter-spacing: 8px;text-decoration: none;display: block;border-radius: 5px;text-align: center;line-height: 36px;font-family: "微软雅黑";color: #fff;}
+.login_footer{position: absolute;bottom: 0;width: 400px;height: 50px;}
+.login_footer_inner {margin: 0 auto;width: 280px;height: 50px;overflow: hidden;}
+.login_footer_inner li{list-style: none;float: left;line-height: 50px;text-align: center;color: #ccc;}
+.word{width: 80px;height: 50px;}
+.word a{text-decoration: none;font:12px/50px "宋体";color: #999;}
+.word a:hover{text-decoration: underline;}
+.gap{width: 20px;height: 50px;}
+/*登陆界面结束*/

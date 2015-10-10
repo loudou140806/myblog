@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>javascript lou</title>
+
+	<style>
+	/*body{overflow-x:hidden; }*/
+	*{margin: 0px;padding: 0px; font-family: "Microsoft Yahei"}
+	.clearfloat {clear:both;height: 0px;width: 0px;overflow: hidden;}
+	#nav_out{background:#2A2A2A;width: 100%;height: 60px;z-index: 100;/*border: 1px solid red;*/position:fixed;margin: 0 auto;}
+	#nav{margin: 0 auto;width: 1120px;height: 60px;position: relative;}
+	#nav ul li{list-style-type: none;float: left;width: 160px; height: 60px; color: white;line-height: 60px;text-align: center;}
+	#nav ul li a{text-decoration: none;color: white;}
+	#nav ul li a:hover{color: #3FB560;}
+	#xt{width:60px;height: 3px;background: #3FB560;position: absolute;bottom: 10px;/*border: 1px solid white;*/}
+	#xt i{width: 0;height: 0;border: 6px solid #3FB560;border-color: transparent transparent #3FB560 transparent;left:23px;top: -12px;position: absolute;}
+
+	/*导航结束*/
+
+	.banner {background-image: url(images/banner.jpg);width: 1440px;height: 632px;text-shadow:2px 2px 2px grey;color: white;font-size: 20px;position: relative;text-align: center;margin: 0 auto; }
+	.banner #wenziyi{top: 800px;position: absolute;left: 50%;margin-left: -170px;}
+	.banner #wenzier{bottom:800px;position: absolute;left: 50%;margin-left: -290px;}
+
+	.main{width: 100%;height:auto;position: relative;overflow: hidden;top: 0px;}
+
+	/*banner结束*/
+	/*失败的css
+	.product{position: relative;}
+	.product_head{width: 810px;height: 80px;margin: 40px auto;text-align: center;line-height: 30px;color: #666666;}
+	.product_box{width:1200px;height:500px;}
+	.product table{width:1200px;height:500px;border: 1px solid red;margin: 0 auto;border-collapse: 1px;border-spacing: 1px;position: absolute;top: 80px;left: 50%;margin-left: -576px;}
+	.product table tr td{width: 392px;height: 250px;border: 1px solid red;overflow: -hidden;position: relative;background: #3FB560;}
+	.product table tr td img{display: block;}
+	.product table tr td img:hover{position: absolute;left: 352px;top: 240px;}
+	.product_table tr td a{width: 352px;height: 230px;background:#3FB560; display: block;z-index: -1;position: absolute;left: 0;}
+	.name{display: block;position: absolute;top: 150px;color: white;left: 50%;margin-left: -64px;top: 50%;margin-top: -10px; }*/
+	/*作品集开始*/
+	h2{font-family: "Microsoft Yahei"}
+	.product{ width:1120px; height:580px; margin:0 auto; padding:50px 0; }
+	.product h2{ text-align:center;font-size:24px; line-height:21px; padding:10px 0;}
+	.product h2 span{ font-size:16px;} 
+	.product_con{ width:1120px; height:530px; position:relative;}
+	.product_con li{ float:left; margin:10px 30px 10px 0; position:relative; overflow:hidden;width: 352px;height: 230px;}
+	.product_con li a{ width:352px; height:230px; display:block; background:#3fb560;position: absolute;top: 0;}
+	.product_con li .icon{ width:35px; height:35px; display:block; position:absolute; left:158px; top:82px; background:url(../images/icon.png) no-repeat center;}
+	.product_con li .name{ width:100px;text-overflow:ellipsis; overflow:hidden; white-space:nowrap;font-size:18px; color:#fff; display:block; position:absolute; left:131px; top:-130px; transition:0.4s;}
+	.product_con li:hover .name{ left:131px; top:130px;}
+	.product_con li img{ position:absolute; left:0; top:0px; transition:0.2s; }
+	.product_con li:hover img{ position:absolute; top:230px; left:352px;}
+
+	.hide{ display:none;}
+	.active{ display:block;}
+	.bar{margin: 0 auto;height: 18px;width: 175px;}
+	.bar ul li{list-style-type:none;width: 18px;height: 18px;border-radius: 9px;margin: 0 20px;cursor: pointer;background: #999999;float: left;}
+	.bar ul .btn{background: #3fb560;}
+
+	/*作品集结束*/
+
+	/*photoshop开始*/
+	.photoshop{width: 1440px;margin:0 auto;height: 580px;background: #242830;position: relative;overflow: hidden;}
+	.photoshop_pic{position: absolute;top: 50%;margin-top: -258px;left: -800px;}
+	.photoshop_wenzi{position: absolute;left: 1520px;width: 600px;height: 229px;top: 50%;margin-top: -115px;color: white;font-size: 18px;}
+	/*photoshop结束*/
+	
+	/*欢迎开始*/
+	.huanyin{width: 1440px;margin:0 auto; height: 100px;margin: 30px; margin: 0px auto;color:#666666;position: relative;background: #F4F5F9;padding: 20px 0;}
+	.huanyin h3{margin: 0 auto;text-align: center;width: 280px;}
+	.huanyin p{margin: 0 auto;width: 280px;}
+	/*欢迎结束*/
+
+	/*HTML/CSS开始*/
+	.css{width: 1440px;margin:0 auto;height: 580px;background: #242830;position: relative;overflow: hidden;}
+	.css_wenzi{width: 600px;height: 200px;color: white;/*top: 50%;margin-top: -100px;*/top:-510px;position: absolute;line-height: 40px;left: 50px;}
+	.css_pic{width: 600px;height: 425px;/*top:50%;margin-top: -210px;*/top:1090px;right: 0px;position: absolute;}
+	/*HTML/CSS结束*/
+
+	/*javascript开始*/
+	.js{width: 1440px;margin:0 auto;height: 580px;background: #242830;position: relative;overflow: hidden;}
+	.js_pic{position: absolute;/*top: 50%;margin-top: -195px;*/top:-580px;left: 50px;}
+	.js_wenzi{position: absolute;top: 50%;color: white;/*left: 50%;*/margin-top: -100px;width: 620px;right: -620px;}
+	/*javascript结束*/
+
+	/*个人简介开始*/
+	.jianjie{position: relative;width: 1440px;margin:0 auto;height: 580px;background:#242830;position: relative;}
+	.jianjie_wenzi{position: absolute;left: 150px;top: 50%;line-height: 25px;color: white;margin-top: -75px;}
+	.jianjie_pic{position: absolute;top: 50%;margin-top: -190px;left: 40%;}
+	/*个人简介结束*/
+
+	/*联系我开始*/
+	.lianxi{width: 1440px;margin:0 auto;height: 400px;position: relative;}
+	.lianxi_zuo{position: absolute;top: 130px;width: 500px;left: 100px;}
+	.lianxi_you{position: absolute;top: 50%;left: 60%;top: 130px;}
+	/*联系我结束*/
+
+	/*感谢开始*/
+	.ganxie{width: 1440px;margin:0 auto;height: 130px;background: #3FB560;position: relative;}
+	.ganxie_in{margin-top:-25px;color: white;top: 50%;position: absolute;left: 50%;margin-left: -74px;}
+	.ganxie_in p{text-align: center;}
+	/*感谢结束*/
+	</style>
+	<script src="js/move2.js"></script>
+	<script type="text/javascript">
+
+	window.onload=function(){
+
+		var oXt=document.getElementById('xt');
+		var oNav=document.getElementById('nav');
+		var aLi=oNav.getElementsByTagName('li');
+		var oWenziyi=document.getElementById('wenziyi');
+		var oWenzier=document.getElementById('wenzier');
+		var wenziyi=null;
+		var wenzier=null;
+		var iSpeed=iSpeed2=0;
+		var index=0;
+
+		//页面动态
+		window.onscroll=function(){
+			var oHeight=document.body.scrollTop||document.documentElement.scrollTop;
+			var oPhotoshop_pic=document.getElementById('photoshop_pic');
+			var oPhotoshop_wenzi=document.getElementById('photoshop_wenzi');
+			var oCss_wenzi=document.getElementById('css_wenzi');
+			var oCss_pic=document.getElementById('css_pic');
+			var oJs_pic=document.getElementById('js_pic');
+			var oJs_wenzi=document.getElementById('js_wenzi');
+			//页面图片动态
+			if(oHeight>920){
+				startMove(oPhotoshop_pic,{left:0});
+				startMove(oPhotoshop_wenzi,{left:720});
+			}
+			 if(oHeight>1690||oHeight<870){
+				startMove(oPhotoshop_pic,{left:-800});
+				startMove(oPhotoshop_wenzi,{left:1520});
+			}
+			 if(oHeight>1590){
+				startMove(oCss_pic,{top:78});
+				startMove(oCss_wenzi,{top:190});
+			}
+			if(oHeight>2370||oHeight<1590){
+				startMove(oCss_pic,{top:-510});
+				startMove(oCss_wenzi,{top:1090});
+			}
+			if(oHeight>2400){
+				startMove(oJs_pic,{top:95});
+				startMove(oJs_wenzi,{right:0});
+			}
+			if(oHeight>3130||oHeight<2300){
+				startMove(oJs_pic,{top:-580});
+				startMove(oJs_wenzi,{right:-620});
+			}
+			//导航随页面滑动
+			//首页
+			if(oHeight>0&&oHeight<515){
+				index=0;
+				startMove(oXt,{left:52+index*160});
+				for(i=0;i<aBtn2.length;i++){
+					aBtn2[i].style.color='';
+				}
+				aBtn2[index].style.color='#3FB560';
+			}
+			//作品集
+			if(oHeight>395&&oHeight<920){
+				index=1;
+				startMove(oXt,{left:52+index*160});
+				for(i=0;i<aBtn2.length;i++){
+					aBtn2[i].style.color='';
+				}
+				aBtn2[index].style.color='#3FB560';
+			}
+			//PhotoShop
+			if(oHeight>995&&oHeight<1500){
+				index=2;
+				startMove(oXt,{left:52+index*160});
+				for(i=0;i<aBtn2.length;i++){
+					aBtn2[i].style.color='';
+				}
+				aBtn2[index].style.color='#3FB560';
+			}
+			//css/html
+			if(oHeight>1695&&oHeight<2285){
+				index=3;
+				startMove(oXt,{left:52+index*160});
+				for(i=0;i<aBtn2.length;i++){
+					aBtn2[i].style.color='';
+				}
+				aBtn2[index].style.color='#3FB560';
+			}
+			//js
+			if(oHeight>2395&&oHeight<2985){
+				index=4;
+				startMove(oXt,{left:52+index*160});
+				for(i=0;i<aBtn2.length;i++){
+					aBtn2[i].style.color='';
+				}
+				aBtn2[index].style.color='#3FB560';
+			}
+			//个人简介
+			if(oHeight>3155&&oHeight<3665){
+				index=5;
+				startMove(oXt,{left:52+index*160});
+				for(i=0;i<aBtn2.length;i++){
+					aBtn2[i].style.color='';
+				}
+				aBtn2[index].style.color='#3FB560';
+			}
+			//联系我
+			if(oHeight>3599){
+				index=6;
+				startMove(oXt,{left:52+index*160});
+				for(i=0;i<aBtn2.length;i++){
+					aBtn2[i].style.color='';
+				}
+				aBtn2[index].style.color='#3FB560';
+			}
+		};
+		// 作品集按钮
+		var oBar=document.getElementById('bar');
+		var aBtn=oBar.getElementsByTagName('li');
+		var oProduct_con=document.getElementById('product_con');
+		var aUl=oProduct_con.getElementsByTagName('ul');
+
+		for(i=0;i<aBtn.length;i++){
+			aBtn[i].index=i;
+			aBtn[i].onclick=function(){
+				for(var j=0;j<aBtn.length;j++){
+					aBtn[j].className='';
+					aUl[j].className='list hide';
+				}
+				aBtn[this.index].className='btn';
+				aUl[this.index].className='list active';
+			}
+		}
+
+			//导航
+		var aBtn2=oNav.getElementsByTagName('a');
+				aBtn2[0].style.color='#3FB560';
+		for(var i=0;i<aLi.length;i++){
+			aLi[i].id=i;
+			aLi[i].onmouseover=function(){
+					var oLeft=160*this.id;
+					startMove(oXt,{left:(oLeft+52)});
+			}
+		}
+		for(i=0;i<aBtn2.length;i++){
+			aBtn2[i].id=i;
+			// alert(aBtn2[i].id);
+			aBtn2[i].onclick=function(){
+				oXt.style.left=160*this.id+52+'px';
+				for(j=0;j<aLi.length;j++){
+					aBtn2[j].style.color='';
+				}
+				aBtn2[this.id].style.color='#3FB560';
+				index=this.id;
+			}
+		}
+		oNav.onmouseout=function(){
+			startMove(oXt,{left:52+index*160});
+		}
+
+		wenziyi=setInterval(function(){
+			iSpeed+=(280-oWenziyi.offsetTop)/13;
+			iSpeed*=0.7;
+			oWenziyi.style.top=oWenziyi.offsetTop+iSpeed+'px';
+		},30);
+
+		wenzier=setInterval(function(){
+			iSpeed2+=(350-oWenzier.offsetTop)/13;
+			iSpeed2*=0.7;
+			oWenzier.style.top=oWenzier.offsetTop+iSpeed2+'px';
+		},30);
+	};
+	</script>
+</head>
+	
+<body>
+	<div id="nav_out">
+		<div class="nav" id="nav">
+			<ul>
+				<li><a target="_self" onclick="" href="#htmlOne">首页</a></li>
+				<li><a target="_self" onclick="" href="#htmlTwo">作品集</a></li>
+				<li><a target="_self" onclick="" href="#htmlThree">PhotoShop</a></li>
+				<li><a target="_self" onclick="" href="#htmlFour">HTML/CSS</a></li>
+				<li><a target="_self" onclick="" href="#htmlFive">javascript</a></li>
+				<li><a target="_self" onclick="" href="#htmlSix">个人简介</a></li>
+				<li><a target="_self" onclick="" href="#htmlSeven">联系我</a></li>
+			</ul>
+			<div id="xt" style="left:52px"><i></i></div>
+			<div class="clearfloat"></div>
+		</div>
+	</div>	
+	<!-- 导航结束 -->
+	<!-- <div class="main"> -->
+		<a name="htmlOne"></a>
+		<div id="banner" class="banner">
+			<p id="wenziyi">一滴水只有放进大海里才永远不会干涸</p>
+			<p id="wenzier">一个人只有当他把自己和集体事业融合在一起的时候才能最有力量</p>
+		</div>
+		<!-- banner结束 -->
+		
+		<!-- 作品开始 -->
+		<a name="htmlTwo"></a>
+		<div id="product" class="product">
+			<div id="product_head" class="product_head">
+				<h2>作品集</br><span>production</span>
+				</h2>
+			</div>
+			<div id="product_con" class="product_con">
+				<ul class="list active" >
+                <li>
+                	<a href="http://www.nxcctv.com">
+                    	<!-- <span class="icon"><img src="images/icon.png"/></span> -->
+                        <span class="name">宁夏蚂蚁网</span>
+                    </a>
+                    <p class="imgd"><img src="images/img02.jpg"/></p>
+                </li>
+                <li>
+                	<a href="http://www.jialelvyou.com">
+                    	<!-- <span class="icon"><img src="images/icon.png"/></span> -->
+                        <span class="name">金色假日旅行社</span>
+                    </a>
+                    <p class="imgd"><img src="images/img06.jpg"/></p>
+                </li>
+                <li style="margin-right:0;">
+                	<a href="http://www.ychryj.com">
+                    	<!-- <span class="icon"><img src="images/icon.png"/></span> -->
+                        <span class="name">红荣一家装饰设计</span>
+                    </a>
+                    <p class="imgd"><img src="images/img03.jpg"/></p>
+                </li>
+                <li>
+                	<a href="http://www.nxzhsh.com">
+                    	<!-- <span class="icon"><img src="images/icon.png"/></span> -->
+                        <span class="name">宁夏纵横四海人力资源管理有限公司</span>
+                    </a>
+                    <p class="imgd"><img src="images/img04.jpg"/></p>
+                </li>
+                <li>
+                	<a href="http://www.ylxxf119.com">
+                    	<!-- <span class="icon"><img src="images/icon.png"/></span> -->
+                        <span class="name">源利欣消防</span>
+                    </a>
+                    <p class="imgd"><img src="images/img05.jpg"/></p>
+                </li>
+                <li style="margin-right:0;">
+                	<a href="http://www.nximage.com/"><!-- 
+                    	<span class="icon"><img src="images/icon.png"/></span> -->
+                        <span class="name">玺智隆形象策划</span>
+                    </a>
+                    <p class="imgd"><img src="images/img07.jpg"/></p>
+                </li>
+                            
+           	<div class="clearfloat"></div>
+            </ul>
+            <ul class="list hide" >
+            	
+                <li>
+                	<a href="content/weiyun/index.html">
+                    	<span class="icon"></span>
+                        <span class="name">模拟开发腾讯微云</span>
+                    </a>
+                    <p class="imgd"><img src="images/img01.jpg"/></p>
+                </li>
+                <li>
+                	<a href="content/taobao/taobao.html">
+                   <!--  	<span class="icon"><img src="images/icon.png"/></span> -->
+                        <span class="name">淘宝广告轮播</span>
+                    </a>
+                    <p class="imgd"><img src="images/img08.jpg"/></p>
+                </li>
+                <li style="margin-right:0;">
+                	<a href="content/taobao/commodity.html">
+                    	<!-- <span class="icon"><img src="images/icon.png"/></span> -->
+                        <span class="name">商品统计效果</span>
+                    </a>
+                    <p class="imgd"><img src="images/img09.jpg"/></p>
+                </li>
+                <li>
+                	<a href="content/taobao/table.html">
+                    	<!-- <span class="icon"><img src="images/icon.png"/></span> -->
+                        <span class="name">图片选项套选项卡切换</span>
+                    </a>
+                    <p class="imgd"><img src="images/img10.jpg"/></p>
+                </li>
+                <li>
+                	<a href="content/taobao/phone.html">
+                    	<!-- <span class="icon"><img src="images/icon.png"/></span> -->
+                        <span class="name">碰撞检测实例</span>
+                    </a>
+                    <p class="imgd"><img src="images/img11.jpg"/></p>
+                </li>
+                <li style="margin-right:0;">
+                	<a href="content/taobao/drag.html">
+                    <!-- 	<span class="icon"><img src="images/icon.png"/></span> -->
+                        <span class="name">拖拽回放效果</span>
+                    </a>
+                    <p class="imgd"><img src="images/img12.jpg"/></p>
+                </li>               
+            <div class="clearfloat"></div>
+            </ul>
+            <ul class="list hide" >
+            	<li>
+                	<a href="content/taobao/switch.html">
+                    	<span class="icon"></span>
+                        <span class="name">图片切换</span>
+                    </a>
+                    <p class="imgd"><img src="images/img13.jpg"/></p>
+                </li>
+                <li>
+                	<a href="content/taobao/tablecao.html">
+                    <!-- 	<span class="icon"><img src="images/icon.png"/></span> -->
+                        <span class="name">表格统计操作</span>
+                    </a>
+                    <p class="imgd"><img src="images/img14.jpg"/></p>
+                </li>
+                <li style="margin-right:0;">
+                	<a href="content/taobao/menu.html">
+                <!--     	<span class="icon"><img src="images/icon.png"/></span> -->
+                        <span class="name">多级菜单操作</span>
+                    </a>
+                    <p class="imgd"><img src="images/img15.jpg"/></p>
+                </li>
+                <li>
+                	<a href="content/taobao/mat.html">
+                    	<!-- <span class="icon"><img src="images/icon.png"/></span> -->
+                        <span class="name">css3d旋转</span>
+                    </a>
+                    <p class="imgd"><img src="images/img17.jpg"/></p>
+                </li>
+                <li>
+                	<a href="content/taobao/css3.html">
+                    	<!-- <span class="icon"><img src="images/icon.png"/></span> -->
+                        <span class="name">css3小例子风车</span>
+                    </a>
+                    <p class="imgd"><img src="images/img16.jpg"/></p>
+                </li>
+                <li style="margin-right:0;">
+                	<a href="content/taobao/timer.html">
+                    <!-- 	<span class="icon"><img src="images/icon.png"/></span> -->
+                        <span class="name">css3时钟</span>
+                    </a>
+                    <p class="imgd"><img src="images/img18.jpg"/></p>
+                </li>          
+           		 <div class="clearfloat"></div>
+            </ul>
+            </div>
+		<!-- 按钮 -->
+		<div id="bar" class="bar">
+			<ul>
+				<li class="btn"></li>
+				<li></li>
+				<li></li>
+				<div class="clearfloat"></div>	
+			</ul>
+		</div>
+		<!-- 按钮结束 -->
+		</div>
+	<!-- </div> -->
+	<!-- 作品集结束 -->
+		<!-- PS开始 -->
+		<a name="htmlThree"></a>
+<!-- <div class="main"> -->
+	<div class="photoshop">
+		<div id="photoshop_pic" class="photoshop_pic">
+			<p><img src="images/bg02.png" alt=""></p>
+		</div>
+		<div id="photoshop_wenzi" class="photoshop_wenzi">
+			<h3>Adobe Photoshop</h3>
+			<p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp简称“PS”，是由Adobe Systems开发和发行的图像处理软件。Photoshop主要处理以像素所构成的数字图像。使用其众多的编修与绘图工具，可以有效地进行图片编辑工作。ps有很多功能，在图像、图形、文字、视频、出版等各方面都有涉及。2003年，Adobe Photoshop 8被更名为Adobe Photoshop CS。2013年7月，Adobe公司推出了最新版本的Photoshop CC，自此，Photoshop CS6作为Adobe CS系列的最后一个版本被新的CC系列取代。Adobe支持Windows操作系统 、安卓系统与Mac OS， 但Linux操作系统用户可以通过使用Wine来运行Photoshop。</p>
+		</div>
+	</div>
+<!-- </div> -->
+<!-- PS结束 -->
+<!-- 欢迎访问开始 -->
+<!-- <div class="main" > -->
+	<div class="huanyin">
+		<h3>欢迎光临我的网站</h3>
+		<p><img src="images/sanjiao.jpg" alt=""></p>
+		<p>本页面将展示我的主要作品集以及简介</p>
+	</div>
+<!-- </div> -->
+<!-- 欢迎访问结束 -->
+<!-- HTML/CSS开始 -->
+<a name="htmlFour"></a>
+<!-- <div class="main"> -->
+	<div class="css">
+		<div id="css_wenzi" class="css_wenzi">
+			<h2>HTML/CSS</h2>
+			<p>精通HTML、DIV、CSS，熟悉页面架构和布局，对Web标准和标签语义化有深入理解，了解HTML5与CSS3
+	熟练运用Photoshop，Dreamweaver，Firebug等常用网页设计制作软件
+	能够解决不同主流浏览器的兼容性问题
+	正在学习移动端开发，运用Html5,css3,js实现手机端的交互
+	了解网页中SEO的一些基本理念
+			</p>
+		</div>
+		<div id="css_pic" class="css_pic">
+			<p><img src="images/bg04.png" alt=""></p>
+		</div>
+	</div>
+<!-- </div> -->
+<!-- HTML/CSS结束 -->
+<!-- 欢迎访问开始 -->
+<!-- <div class="main"> -->
+	<div class="huanyin">
+		<h3>欢迎光临我的网站</h3>
+		<p><img src="images/sanjiao.jpg" alt=""></p>
+		<p>本页面将展示我的主要作品集以及简介</p>
+	</div>
+<!-- </div> -->
+<!-- 欢迎访问结束 -->
+<!-- js开始 -->
+<a name="htmlFive"></a>
+<!-- <div class="main"> -->
+	<div class="js">
+		<div id="js_pic" class="js_pic">
+			<p><img src="images/bg06.png" alt=""></p>
+		</div>
+		<div id="js_wenzi" class="js_wenzi">
+				<h3>JavaScript</h3>
+				<p>JavaScript一种直译式脚本语言，是一种动态类型、弱类型、基于原型的语言，内置支持类型。它的解释器被称为JavaScript引擎，为浏览器的一部分，广泛用于客户端的脚本语言，最早是在HTML（标准通用标记语言下的一个应用）网页上使用，用来给HTML网页增加动态功能。在1995年时，由Netscape公司的Brendan Eich，在网景导航者浏览器上首次设计实现而成。因为Netscape与Sun合作，Netscape管理层希望它外观看起来像Java，因此取名为JavaScript。但实际上它的语法风格与Self及Scheme较为接近。为了取得技术优势，微软推出了JScript，CEnvi推出ScriptEase，与JavaScript同样可在浏览器上运行。为了统一规格，因为JavaScript兼容于ECMA标准，因此也称为ECMAScript。</p>
+		</div>
+	</div>
+<!-- </div> -->
+<!-- js结束 -->
+<!-- 欢迎访问开始 -->
+<!-- <div class="main"> -->
+	<div class="huanyin">
+		<h3>欢迎光临我的网站</h3>
+		<p><img src="images/sanjiao.jpg" alt=""></p>
+		<p>本页面将展示我的主要作品集以及简介</p>
+	</div>
+<!-- </div> -->
+<!-- 欢迎访问结束 -->
+<a name="htmlSix"></a>
+<!-- <div class="main"> -->
+	<div class="jianjie">
+		<div id="jianjie_wenzi" class="jianjie_wenzi">
+			<h3>个人简介</h3>
+			<p>
+				姓名：漏鸣杰<br>	
+				学校：杭州电子科技大学<br>
+				手机：15257106421<br>
+				邮箱：546587684@qq.com <br>
+				学校：杭州电子科技大学<br>
+				
+			</p>
+		</div>
+		<div id="jianjie_pic" class="jianjie_pic">
+			<p><img src="images/bg8.png" alt=""></p>
+		</div>
+	</div>
+<!-- </div> -->
+<!-- 个人简介结束 -->
+<!-- 联系开始 -->
+<a name="htmlSeven"></a>
+<!-- <div class="main"> -->
+	<div class="lianxi">
+		<div id="lianxi_zuo" class="lianxi_zuo">
+			<h3>联系我/Contact Me</h3>
+			<p>不要轻易说不可能。互联网一直在技术与需求中进步，所有企业都需要借助或者学习互联网，因为互联网在影响每一个人的思维、消费习惯、时间分配等。我时刻的准备着学习，用欣赏和怀疑的眼光学习每一个未知事物，2年的互联网工作经历，培养了我良好的技术及设计水平，我相信在不同的岗位上我都愿竭力发光发热。</p>
+		</div>
+		<div id="lianxi_you" class="lianxi_you">
+			<p>
+				个人简介
+				<br>
+				姓名：漏鸣杰<br>
+				学校：杭州电子科技大学<br>
+				手机：15257106421	<br>
+				邮箱：546587684@qq.com <br>
+				学校：杭州电子科技大学
+			</p>
+		</div>
+	</div>
+<!-- </div> -->
+<!-- 联系结束 -->
+<!-- <div class="main"> -->
+	<div class="ganxie">
+		<div id="ganxie_in" class="ganxie_in">
+			<p>
+				感谢访问我的网站<br>
+				www.91personal.cn
+			</p>
+		</div>
+	</div>
+<!-- </div> -->
+</body>
+</html>
