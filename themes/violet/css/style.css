@@ -384,6 +384,9 @@ a:hover {
 .main-article-contant {
     margin: 30px 0 30px;
 }
+.main-article-contant img{
+    margin: 0 auto;
+}
 .main-article-contant p {
     font-size: 16px;
     color: #22272A;

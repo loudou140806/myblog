@@ -40,3 +40,5 @@ title: 站点调试
 <img src="{{ site.url }}/images/post/2015-10-08/2.jpg" width="720px"/>
 
 进入`https://loudou140806.github.com/myblog`,没有问题，一切运行正常，但是在点击进入文章时出现404页面
+
+其实是由于rpost。url产生的是绝对路径，而我的blog不是站点根目录下，所以找不到/2015/10/08/***页面
