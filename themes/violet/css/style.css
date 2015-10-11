@@ -58,6 +58,13 @@ caption,th {
 h1,h2,h3,h4,h5,h6 {
     font-size:100%;
     font-weight:500;
+    text-shadow: 0 1px 0px #fff,0 1px 1px rgba(0,0,0,0.5);
+}
+h2{
+    color: #d2691e;
+}
+h3{
+    color: #00b2b3;
 }
 q:before,q:after {
     content:'';
@@ -222,9 +229,10 @@ a:hover {
     background: #fff;
 }
 .violet-post {
-    width: 720px;
-    padding: 50px 0;
+    width: 820px;
+    padding: 50px 50px;
     margin: 0 auto;
+    box-shadow: 0px 0px 10px #666;
 }
 #violet-paging {
     width: 100%;
@@ -416,13 +424,14 @@ a:hover {
     width: 720px;
     font-size: 32px;
     margin: 0 auto;
+    color:#0088cc;
 }
 .main-article h2 { font-size: 28px; margin-bottom: 30px; margin-top: 36px; font-weight: bold; }
 .main-article h3 { font-size: 24px; margin-bottom: 24px; margin-top: 36px; }
 .main-article h4 { font-size: 20px; margin-bottom: 20px; margin-top: 36px;}
 .main-article h5 { font-size: 18px; margin-bottom: 20px; margin-top: 36px;font-weight: bold; }
 .main-article pre {
-    margin: 30px 0px 30px 0px;
+  /*  margin: 30px 0px 30px 0px;
     padding: 13px 20px;
     background-color: #F4F4F6;
     clear: both;
@@ -431,7 +440,14 @@ a:hover {
     font: 14px/22px Consolas, "Courier New", Courier, monospace;
     -webkit-border-radius: 2px;
        -moz-border-radius: 2px;
-            border-radius: 2px;
+            border-radius: 2px;*/
+      margin: 10px;
+      background-color: rgba(0,178,179,0.16667);
+      border-width: 1px 1px 1px 5px;
+      border-style: solid;
+      border-color: rgba(0,178,179,0.33333);
+      border-radius: 4px;
+      box-shadow: 0 0 3px rgba(0,178,179,0.16667);
 }
 .main-article code {
     background: #f6f6f6;
@@ -457,13 +473,21 @@ a:hover {
 .main-article em { font-style: italic; }
 .main-article strong { font-weight: bold; }
 .main-article blockquote {
-    padding: 20px 20px 0 20px;
+/*    padding: 20px 20px 0 20px;
     margin: 20px 0 24px;
     border-right: 3px solid #0088cc;
     border-radius: 0 3px 3px 0;
     text-align: right;
     color: #8d8d8d;
-    font-style: italic;
+    font-style: italic;*/
+    position: relative;
+    margin: 15px 10px;
+    background-color: rgba(0,179,0,0.16667);
+    border-width: 1px 1px 1px 5px;
+    border-style: solid;
+    border-color: rgba(0,128,0,0.33333);
+    border-radius: 4px;
+    box-shadow: 0 0 3px rgba(0,128,0,0.16667);
 }
 .main-article blockquote p {
     color: #8d8d8d;
@@ -645,4 +669,3 @@ a.toTop:hover {
     }
 
 }
-
