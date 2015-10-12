@@ -2,7 +2,7 @@
 layout: post
 title: 站点调试
 description: 站点调试中遇到的一些问题
-keyword: 调试
+keywords: 调试
 ---
 
 ##本地服务器上的调试

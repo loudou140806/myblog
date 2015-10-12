@@ -2,7 +2,7 @@
 layout: post
 title: table属性方法
 description: table的一些专用HTML-DOM属性和方法
-keyword: table
+keywords: table
 ---
 
 ###table专用的HTML-DOM属性方法
