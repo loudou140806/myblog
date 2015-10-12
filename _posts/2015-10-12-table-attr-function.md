@@ -1,8 +1,7 @@
 ---
 layout: post
-description: table的一些专用HTML-DOM属性和方法
-comment： true
 title: table属性方法
+description: table的一些专用HTML-DOM属性和方法
 keyword: table
 ---
 
