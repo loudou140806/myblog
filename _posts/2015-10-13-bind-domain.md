@@ -1,8 +1,8 @@
 ---
 layout: post
 description: 如何将域名和github Page主页绑定
-title： 域名绑定
-keywords： 域名 github 顶级域名 A记录 CNAME记录
+title: 域名绑定
+keywords: 域名 github 顶级域名 A记录 CNAME记录
 ---
 
 ##准备一个域名
@@ -24,6 +24,6 @@ keywords： 域名 github 顶级域名 A记录 CNAME记录
 
 然后前往你的DNS服务商新建一个CNAME解析到你的github Page个人主页地址（比如loudou.github.io）.主机名@表示通过domain.com访问，主机名为www则表示通过www.domian.com访问。
 
-<img src="{{ site.url }}/myblog/images/post/2015-10-13/3.png" alt="">
+<img src="{{ site.url }}/myblog/images/post/2015-10-13/4.png" alt="">
 
 域名解析不能马上生效，啊大概需要十几分钟的时间，之后就能正常访问了。
