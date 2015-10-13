@@ -297,4 +297,4 @@ var EventUtil = {
 
 ###textInput事件
 
-keypress和textInput的区别在于，keypress对于任何可以获得焦点的元素都能触发，而textInput只在可编辑区域才会触发，并且textInput只会在输入实际字符才会被触发，但是keypress事件则在按下哪些能够影响文本显示的按键时也会触发（例如退格键）。
+keypress和textInput的区别在于，keypress对于任何可以获得焦点的元素都能触发，而textInput只在可编辑区域才会触发，并且textInput只会在输入实际字符才会被触发，但是keypress事件则在按下哪些能够影响文本显示的按键时也会触发（例如退格键）。ItextInput事件的event对象中还包含一个data属性，这个属性的值就是用户输入的字符。
