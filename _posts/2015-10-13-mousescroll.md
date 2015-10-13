@@ -8,22 +8,22 @@ title: 鼠标滚轮事件
 
 ###9个鼠标事件。
 
--click
--dblclick
--mousedown
--mouseenter
--mouseleave
--mousemove
--mouseout
--mouseover
--mouseup
+- click
+- dblclick
+- mousedown
+- mouseenter
+- mouseleave
+- mousemove
+- mouseout
+- mouseover
+- mouseup
 
 页面所有元素都支持鼠标事件，除了mouseenter和mouseleave其他事件都会冒泡，也可以被取消。但是取消鼠标事件将会影响浏览器的默认行为。取消鼠标事件的默认行为还会影响其他事件，因为鼠标事件和其他事件是密不可分的关系。
 
 ###客户区坐标位置
 
--clientX鼠标相对视口的left值
--clientY鼠标相对视口的top值
+- clientX鼠标相对视口的left值
+- clientY鼠标相对视口的top值
 
 {% highlight js %}
 
@@ -37,8 +37,8 @@ EventUtil.addHandler(div, "click", function(event){
 
 ###页面坐标位置
 
--pageX鼠标相对页面本身的left值
--pageY鼠标相对页面本身的top值
+- pageX鼠标相对页面本身的left值
+- pageY鼠标相对页面本身的top值
 
 页面没有滚动的时候，pageX和pageY的值与clientX和clientY的值相同。
 IE8以及更早的本本不支持事件对象上的页面坐标，但是可以用客户区坐标和滚动信息计算出来，这个时候需要用到document.body（混杂模式）和document.documentElement（标准模式）中的scrollTop和scrollLeft。
@@ -162,14 +162,14 @@ EventUtil.addHandler(div, "click", function(event){
 
 IE8之前也有button属性
 
--0：表示没有按下按钮
--1：表示按下了主鼠标按钮
--2：表示按下了次鼠标按钮
--3：表示同时按下了主、次鼠标按钮
--4：表示按下了中间的鼠标按钮
--5：表示同时按下了住鼠标按钮和中间的鼠标按钮
--6：表示同时按下了次鼠标按钮和中间的鼠标按钮
--7：表示同时按下了3个按钮
+- 0：表示没有按下按钮
+- 1：表示按下了主鼠标按钮
+- 2：表示按下了次鼠标按钮
+- 3：表示同时按下了主、次鼠标按钮
+- 4：表示按下了中间的鼠标按钮
+- 5：表示同时按下了住鼠标按钮和中间的鼠标按钮
+- 6：表示同时按下了次鼠标按钮和中间的鼠标按钮
+- 7：表示同时按下了3个按钮
 
 下面是跨浏览器代码：
 
@@ -247,34 +247,34 @@ var EventUtil = {
 
 面向iPhone和iPod的Safari开发是要记住一下几点
 
--不支持dblclick事件。双击只会放大画面，没有办法改变该行为。
--轻击可单击元素会触发mousemove事件
--mousemove会触发mouseover和mouseout事件
--两个手指放在屏幕上且页面岁手指移动而滚动式会触发mousewheel和scroll事件
+- 不支持dblclick事件。双击只会放大画面，没有办法改变该行为。
+- 轻击可单击元素会触发mousemove事件
+- mousemove会触发mouseover和mouseout事件
+- 两个手指放在屏幕上且页面岁手指移动而滚动式会触发mousewheel和scroll事件
 
 
 ##键盘与文本事件
 
 用户在使用键盘是会触发键盘事件。有3个键盘事件，简述如下：
 
--keydown：当用户按下键盘上的任意键触发，如果不放会重复触发。
--keypress:当用户按下键盘上的字符键触发，如果不放也会重复触发。
--keyup:当用户释放键盘上的按键时触发。
--textInput：在文本插文本框之前会触发textInput事件。
+- keydown：当用户按下键盘上的任意键触发，如果不放会重复触发。
+- keypress:当用户按下键盘上的字符键触发，如果不放也会重复触发。
+- keyup:当用户释放键盘上的按键时触发。
+- textInput：在文本插文本框之前会触发textInput事件。
 
 ###键码《javascript高级程序设计》P380
 
 常用：
-退格：		8
-制表：		9
-回车：		13
-shift:		16
-ctrl:		17
-esc：		27
-左箭头：	37
-上箭头：	38
-右箭头：	39
-下箭头：	40
+- 退格：		8
+- 制表：		9
+- 回车：		13
+- shift:		16
+- ctrl:		17
+- esc：		27
+- 左箭头：	37
+- 上箭头：	38
+- 右箭头：	39
+- 下箭头：	40
 
 
 ###字符编码 
