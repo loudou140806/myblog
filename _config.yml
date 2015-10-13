@@ -42,7 +42,7 @@ timezone:      null
 title: Simple
 subTitle: 临渊羡鱼，不如退而结网！
 description: 这是 Frank 的第一个博客，它是基于 Jekyll 搭建起来的。在这里，用来记录我想要记录的时刻。
-url: "http://loumingjie.cn/myblog"
+url: "http://loudou140806.github.io/myblog"
 feed: /atom.xml
 
 #菜单配置

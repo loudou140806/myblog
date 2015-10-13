@@ -2,7 +2,9 @@
 layout: post
 title: EventUtil构造函数
 ---
+
 {% highlight js %}
+
 var EventUtil = {
 	
 	var EventUnil = {
@@ -102,4 +104,5 @@ var EventUtil = {
 		}
 	}	
 }
+
 {% endhighlight %}
