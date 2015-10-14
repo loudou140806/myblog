@@ -3,6 +3,7 @@ layout: post
 title: table属性方法
 description: table的一些专用HTML-DOM属性和方法
 keywords: table
+tags: javascript
 ---
 
 ###table专用的HTML-DOM属性方法

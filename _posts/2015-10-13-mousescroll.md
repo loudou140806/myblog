@@ -2,6 +2,7 @@
 layout: post
 description: 
 title: 鼠标滚轮事件
+tags: javascript 
 ---
 
 ##鼠标滚轮事件

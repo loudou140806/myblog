@@ -1,8 +1,9 @@
 ---
 layout: post
-title:模拟事件
+title: 模拟事件
 description: DOM中的事件模拟，包括模拟鼠标事件，模拟键盘事件，模拟HTML事件，自定义DOM事件，IE中的事件模拟
-keyword： 事件模拟 createEvent MouseEvents krybordEvent MutationEvents CustomEvent createEventObject
+keyword: 事件模拟 createEvent MouseEvents krybordEvent MutationEvents CustomEvent createEventObject
+tags: javascript 
 ---
 
 ##模拟事件
@@ -22,7 +23,7 @@ keyword： 事件模拟 createEvent MouseEvents krybordEvent MutationEvents Cust
 
 ####模拟鼠标事件
 
-》createEvent("MouseEvents").返回的对象有一个名为initMouseEvent()的方法。它有十五个参数如下，用以制订与该鼠标事件有关的信息。
+>createEvent("MouseEvents").返回的对象有一个名为initMouseEvent()的方法。它有十五个参数如下，用以制订与该鼠标事件有关的信息。
 
 - type(字符串): 表示要触发的事件类型，例如（"click"）
 - bubbles(布尔值)：表示时间是否应该冒泡。一般为true。

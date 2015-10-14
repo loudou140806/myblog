@@ -3,6 +3,7 @@ layout: post
 description: 如何将域名和github Page主页绑定
 title: 域名绑定
 keywords: 域名 github 顶级域名 A记录 CNAME记录
+tags: jekyll 博客搭建 github
 ---
 
 ##准备一个域名

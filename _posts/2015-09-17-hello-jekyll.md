@@ -3,6 +3,7 @@ layout: post
 title: Hello jekyll
 description: 这是 Frank 在 GitHub 上面的第一篇文章，您好，杰克儿。
 keywords: Frank,GitHub
+tags: jekyll 博客搭建
 ---
 
 这是第一篇在jekyll上的文章，自从14年开始读研，就从学长那接触到了前端，开始其实是奔着以后找工作的目的去的，但是在慢慢学习的过程当中，发现了前端的吸引力。搭这个博客是因为自己想记录一下学习路上所学到的东西，无论是心得，草稿还是作品，都想有个地方展示。

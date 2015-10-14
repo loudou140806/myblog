@@ -3,6 +3,7 @@ layout: post
 title: 站点调试
 description: 站点调试中遇到的一些问题
 keywords: 调试
+tags: 博客搭建 jekyll 
 ---
 
 ##本地服务器上的调试
