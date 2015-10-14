@@ -154,10 +154,11 @@ a:hover {
 }
 #violet-header:hover .logo a{
     text-decoration: none;
-    color: #fefefe;
+    color: rgba(0, 0, 0, 0.8);
+    
 }
 #violet-header:hover .subtitle{
-    color: rgba(0, 0, 0, 0.8);
+    color: rgba(255,255,255,0.4);
 }
 .logo, .logo a {
     padding: 50px 0 0 0;
@@ -165,8 +166,7 @@ a:hover {
     text-align: center;
     font-family: 'Spirax', cursive;
     font-size: 52px;
-    color: rgba(0, 0, 0, 0.8);
- 
+    color: #fefefe;
     -webkit-transition: color .4s ease-in-out;
     -moz-transition: color .4s ease-in-out;
     -ms-transition: color .4s ease-in-out;
@@ -181,8 +181,13 @@ a:hover {
     line-height: 32px;
     font-size: 16px;
     text-align: center;
-    color: rgba(255,255,255,0.4);
+    color: rgba(0, 0, 0, 0.8);
     font-family: "Microsoft Yahei", "Times New Roman", "Hiragino Mincho Pro", "Songti SC", "SimSun", sans-serif;
+    -webkit-transition: color .4s ease-in-out;
+    -moz-transition: color .4s ease-in-out;
+    -ms-transition: color .4s ease-in-out;
+    -o-transition: color .4s ease-in-out;
+    transition: color .4s ease-in-out;
 }
 #violet-nav {
     width: 100%;
