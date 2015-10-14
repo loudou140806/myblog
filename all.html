@@ -8,12 +8,12 @@ layout: default
 {% for rpost in site.posts %}
 <article class="main-article">
 	<div class="violet-post{% for rtag in rpost.tags%} tag-{{ rtag }}{% endfor %}">
-		<h3 class="mian-article-title"><a href="/myblog{{ rpost.url }}" title="{{ rpost.title }}" rel="bookmark">{{ rpost.title }}</a></h3>
+		<h3 class="main-article-title"><a href="/myblog{{ rpost.url }}" title="{{ rpost.title }}" rel="bookmark">{{ rpost.title }}</a></h3>
 		{% include tag.html %}
 		<p class="main-article-meta"><time pubdate="{{ rpost.date | date_to_utc | date: '%Y-%m-%d' }}">{{ rpost.date | date_to_utc | date: "%Y-%m-%d" }}</time></p>
 		<div class="main-article-content">
 			<p>{{ rpost.description }}</p>
-			<p class="mian-article-more"><a href="/myblog{{ rpost.url }}" title="read more" rel="nofollow">Read More</a></p>
+			<p class="main-article-more"><a href="/myblog{{ rpost.url }}" title="read more" rel="nofollow">Read More</a></p>
 		</div>
 	</div>
 </article>
@@ -63,7 +63,7 @@ layout: default
 
         if (query.tag !== undefined) {
             var tag = decodeURI(query.tag);
-            $('.violet-title-ite').text('Posts tagged with ' + tag);
+            $('.violet-title-item').text('Posts tagged with ' + tag);
             $('.violet-post').not('.tag-' + tag).hide();
         }
     };

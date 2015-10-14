@@ -235,7 +235,7 @@ a:hover {
 #violet-paging {
     width: 100%;
     height: auto;
-    padding: 10px 0;
+    margin: 10px 0;
     background: #f6f6f6;
 }
 .pagination-list {
@@ -402,7 +402,7 @@ a:hover {
     transition-duration: 0.5s;
 }
 .main-article-meta {
-    margin: 35px 0 30px 0;
+    margin: 15px 0 10px 0;
     color: #A7AAB1;
     font-size: 15px;
     line-height: 22px;
@@ -452,10 +452,10 @@ a:hover {
     margin: 0 auto;
     color:#0088cc;
 }
-.main-article h2 { font-size: 28px; margin-bottom: 30px; margin-top: 36px; font-weight: bold; }
-.main-article h3 { font-size: 24px; margin-bottom: 24px; margin-top: 36px; }
-.main-article h4 { font-size: 20px; margin-bottom: 20px; margin-top: 36px;}
-.main-article h5 { font-size: 18px; margin-bottom: 20px; margin-top: 36px;font-weight: bold; }
+.main-article h2 { font-size: 28px; margin-bottom: 10px; margin-top: 15px; font-weight: bold; }
+.main-article h3 { font-size: 24px; margin-bottom: 10px; margin-top: 15px; }
+.main-article h4 { font-size: 20px; margin-bottom: 10px; margin-top: 15px;}
+.main-article h5 { font-size: 18px; margin-bottom: 10px; margin-top: 15px;font-weight: bold; }
 .main-article pre {
   /*  margin: 30px 0px 30px 0px;
     padding: 13px 20px;
