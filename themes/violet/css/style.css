@@ -183,7 +183,7 @@ a:hover {
 }
 .nav-list {
     list-style: none;
-    width: 720px;
+    width: 920px;
     margin: 0 auto;
     line-height: 48px;
     height: 48px;
@@ -477,12 +477,12 @@ a:hover {
       box-shadow: 0 0 3px rgba(0,178,179,0.16667);
 }
 .main-article code {
-    border: 1px dashed rgba(0,178,179,0.16667);
+    border: 1px dashed rgba(0,178,179,0.33333);
     border-radius: 3px 3px;
     line-height: inherit;
     vertical-align: baseline;
     padding: 2px 2px;
-    color: rgba(0,178,179,0.33333);
+    color: rgba(0,178,179,0.66666);
 }
 .main-article pre code span{
     background-color: rgba(212, 241, 242, 1);
