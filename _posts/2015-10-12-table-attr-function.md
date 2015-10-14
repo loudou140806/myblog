@@ -25,9 +25,9 @@ keywords: table
 
 ###为\<tbody\>元素添加的属性和方法
 
-*rows: 保存着\<tbody\>元素的元素集合。
-*deleteRow(pos): 删除指定位置的行。
-*insertRow(pos): 向rows集合中的指定位置插入一行，返回对新插入行的引用。
+* rows: 保存着\<tbody\>元素的元素集合。
+* deleteRow(pos): 删除指定位置的行。
+* insertRow(pos): 向rows集合中的指定位置插入一行，返回对新插入行的引用。
 
 ###为\<tr\>元素添加的属性和方法
 
