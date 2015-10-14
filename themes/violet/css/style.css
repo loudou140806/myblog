@@ -152,25 +152,35 @@ a:hover {
     height: 210px;
     margin: 0 auto;
 }
+#violet-header:hover .logo a{
+    text-decoration: none;
+    color: #fefefe;
+}
+#violet-header:hover .subtitle{
+    color: rgba(0, 0, 0, 0.8);
+}
 .logo, .logo a {
     padding: 50px 0 0 0;
-    width: 500px;
+    width: 720px;
+    text-align: center;
     font-family: 'Spirax', cursive;
     font-size: 52px;
-    color: #fefefe;
+    color: rgba(0, 0, 0, 0.8);
+ 
     -webkit-transition: color .4s ease-in-out;
     -moz-transition: color .4s ease-in-out;
     -ms-transition: color .4s ease-in-out;
     -o-transition: color .4s ease-in-out;
     transition: color .4s ease-in-out;
 }
-.logo a:hover {
+/*.logo a:hover {
     text-decoration: none;
-    color: rgba(0, 0, 0, 0.8);
-}
+    color: #fefefe;
+}*/
 .subtitle {
     line-height: 32px;
     font-size: 16px;
+    text-align: center;
     color: rgba(255,255,255,0.4);
     font-family: "Microsoft Yahei", "Times New Roman", "Hiragino Mincho Pro", "Songti SC", "SimSun", sans-serif;
 }
@@ -190,9 +200,9 @@ a:hover {
 }.nav-list .follow {
     display: block;
     float: right;
-    width: 28px;
-    height: 28px;
-    margin-left: 5px;
+    width: 32px;
+    height: 32px;
+    margin: 8px 0px 8px 5px;
     line-height: 28px;
     font-size: 18px;
     display: block;
