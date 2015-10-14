@@ -53,6 +53,9 @@
                         {{ indicator }}
                     </li>
                     {% endfor %}
+                    {% for link in site.follow %}
+                    <a class="follow" href="{{ link.url }}" target="_blank"><i class="fa {{ link.class }}"></i></a>
+                    {% endfor %}
                 </ul>
             </nav>
         </section>
@@ -65,9 +68,7 @@
             </div>
             <div class="copyright">
                 <div class="copyright-cnt fn-clear">
-                    {% for link in site.follow %}
-                    <a class="follow" href="{{ link.url }}" target="_blank"><i class="fa {{ link.class }}"></i></a>
-                    {% endfor %}
+                   
                     <p class="text">© 2013 Violet Jekyll Theme.Design by <a href="http://www.zhanxin.info">zhanxin.lin</a></p>
                 </div>
             </div>

@@ -187,6 +187,27 @@ a:hover {
     margin: 0 auto;
     line-height: 48px;
     height: 48px;
+}.nav-list .follow {
+    display: block;
+    float: right;
+    width: 28px;
+    height: 28px;
+    margin-left: 5px;
+    line-height: 28px;
+    font-size: 18px;
+    display: block;
+    color: #fff;
+    text-align: center;
+    background: rgba(255,255,255,0.1);
+    border-radius: 3px 3px;
+    -webkit-transition: background .4s ease-in-out;
+    -moz-transition: background .4s ease-in-out;
+    -ms-transition: background .4s ease-in-out;
+    -o-transition: background .4s ease-in-out;
+    transition: background .4s ease-in-out;
+}
+.nav-list .follow:hover {
+    background: #0088cc;
 }
 .nav-item {
     float: left;
@@ -325,28 +346,7 @@ a:hover {
     line-height: 28px;
     height: 28px;
 }
-.copyright-cnt .follow {
-    display: block;
-    float: left;
-    width: 28px;
-    height: 28px;
-    margin-right: 5px;
-    line-height: 28px;
-    font-size: 18px;
-    display: block;
-    color: #fff;
-    text-align: center;
-    background: rgba(255,255,255,0.1);
-    border-radius: 3px 3px;
-    -webkit-transition: background .4s ease-in-out;
-    -moz-transition: background .4s ease-in-out;
-    -ms-transition: background .4s ease-in-out;
-    -o-transition: background .4s ease-in-out;
-    transition: background .4s ease-in-out;
-}
-.copyright-cnt .follow:hover {
-    background: #0088cc;
-}
+
 .copyright-cnt .text {
     float: right;
     display: inline-block;
@@ -371,14 +371,14 @@ a:hover {
     line-height: 36px;
     color: #000;
     text-decoration: none;
-}
-.main-article-title a:hover {
-    color: #0088cc;
      -webkit-transition-duration: 0.5s;
     -moz-transition-duration: 0.5s;
     -ms-transition-duration: 0.5s;
     -o-transition-duration: 0.5s;
     transition-duration: 0.5s;
+}
+.main-article-title a:hover {
+    color: #0088cc;
 }
 .tagPanel{
    margin: 5px 0 -5px 0;
@@ -477,12 +477,12 @@ a:hover {
       box-shadow: 0 0 3px rgba(0,178,179,0.16667);
 }
 .main-article code {
-    border: 1px dashed rgba(0,178,179,0.33333);
+    border: 1px dashed rgba(0,178,179,0.666);
     border-radius: 3px 3px;
     line-height: inherit;
     vertical-align: baseline;
     padding: 2px 2px;
-    color: rgba(0,178,179,0.66666);
+    color: rgba(0,178,179,1);
 }
 .main-article pre code span{
     background-color: rgba(212, 241, 242, 1);
