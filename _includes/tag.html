@@ -1,7 +1,7 @@
 <div class="tagPanel">
-            {% for rtag in rpost.tags %}
-            <a href="{{ site.url }}/all.html?tag={{ rtag }}">
-                <div class="tag">{{ rtag }}</div>
-            </a>
-            {% endfor %}
+    {% for rtag in rpost.tags %}
+    <a href="{{ site.url }}/all.html?tag={{ rtag }}">
+        <div class="tag">{{ rtag }}</div>
+    </a>
+    {% endfor %}
 </div>

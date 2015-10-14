@@ -130,7 +130,7 @@ var EventUtil = {
 			}else{
 				element["on" + type] = handler;
 			}
-		}，
+		},
 
 		stoppropagation: function(event){
 			if(event.stopPropagation){

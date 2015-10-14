@@ -367,8 +367,8 @@ a:hover {
 --------------------------------------*/
 .main-article-title,
 .main-article-title a {
-    font-size: 40px;
-    line-height: 46px;
+    font-size: 30px;
+    line-height: 36px;
     color: #000;
     text-decoration: none;
 }
@@ -391,6 +391,7 @@ a:hover {
     padding: 3px 8px;
     margin-right: 5px;
     margin-bottom: 5px;
+    font-size: 0.8em;
     display: inline-block;
     color: #efeffe;
     border-radius: 0.3em;
@@ -476,11 +477,12 @@ a:hover {
       box-shadow: 0 0 3px rgba(0,178,179,0.16667);
 }
 .main-article code {
-    border: 1px solid #d0d0d0;
+    border: 1px dashed rgba(0,178,179,0.16667);
     border-radius: 3px 3px;
     line-height: inherit;
     vertical-align: baseline;
     padding: 2px 2px;
+    color: rgba(0,178,179,0.33333);
 }
 .main-article pre code span{
     background-color: rgba(212, 241, 242, 1);
