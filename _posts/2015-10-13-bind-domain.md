@@ -13,7 +13,7 @@ tags: jekyll 博客搭建 github
 
 可以在很多互联网服务器主机的公司注册，个人选择的是互联中国，当然是因为价格比较便宜。注册完之后需要2-24小时申请时间。
 
-<img  data-original="{{ site.url }}/images/post/2015-10-13/1.png" alt="" width="600px" height="300px">
+<img  data-original="{{ site.url }}/images/post/2015-10-13/1.png" alt="" >
 
 然后再自己的项目根目录创建CNAME文件（没有后缀）.
 

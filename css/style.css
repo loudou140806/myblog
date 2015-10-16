@@ -268,6 +268,9 @@ a:hover {
     margin: 0 auto;
     box-shadow: 0px 0px 10px #666;
 }
+.violet-post img{
+    max-width: 720px;
+}
 #violet-paging {
     width: 100%;
     height: auto;
