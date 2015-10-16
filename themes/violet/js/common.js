@@ -185,5 +185,21 @@ $(document).ready(function() {
             }
         }
 
-    }
+    };
+    (function(){
+        var aImg = document.getElementsByTagName('img');
+        aImg = Array.prototype.slice.call(aImg);
+        aImg.map(function(elme){
+            
+            if(elme.dataset.rsrc){
+                EventUtil.addHandler(elme, "load", function(event){
+                    event = EventUtil.getEvent(event);
+                    var target = EventUtil.getTarget(event);
+                    target.src = target.dataset.rsrc;
+                });
+            }else{
+                return ;
+            }
+        });
+    })();
 });
