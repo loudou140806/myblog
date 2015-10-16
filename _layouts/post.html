@@ -50,7 +50,7 @@ comment: true
         aImg = Array.prototype.slice.call(aImg);
         aImg.map(function(elme){
             
-            if(elme.dataest.rsrc){
+            if(elme.dataset.rsrc){
                 EventUtil.addHandler(elme, "load", function(event){
                     event = EventUtil.getEvent(event);
                     var target = EventUtil.getTarget(event);
@@ -59,7 +59,6 @@ comment: true
             }else{
                 return ;
             }
-
         });
     })();
 
