@@ -167,3 +167,41 @@ $("#food-pkd").data("en","Beijing Stuffed Duck");
 console.log( $("#food-pkd").data("en") );
 
 {% endhighlight %}
+
+##利用dataest制作图片加载效果
+
+先将图片的`src`设置成你的加载动画，比如说我的博客中用的是：
+
+<img src="{{ site.url }}/images/loading.gif" alt="图片加载动画">
+
+然后将自定义的data-*属性设置成你要加载的图片：
+
+{% highlight js %}
+	<img src="loading.gif" data-srcs="2.jpg" alt="">
+	<img src="loading.gif" data-srcs="3.jpg" alt="">
+	<img src="loading.gif" data-srcs="4.jpg" alt="">
+	<img src="loading.gif" data-srcs="5.jpg" alt="">
+{% endhighlight %}
+
+在post页面嵌入如下代码：
+
+{% highlight js %}
+(function(){
+    var aImg = document.getElementsByTagName('img');
+    aImg = Array.prototype.slice.call(aImg);
+    aImg.map(function(elme){
+        
+        if(elme.dataest.rsrc){
+            EventUtil.addHandler(elme, "load", function(event){
+                event = EventUtil.getEvent(event);
+                var target = EventUtil.getTarget(event);
+                target.src = target.dataset.rsrc;
+            });
+        }else{
+            return ;
+        }
+    });
+})();
+{% endhighlight %}
+
+然后就能达到加载动画的效果了~
