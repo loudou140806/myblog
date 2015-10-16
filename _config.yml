@@ -39,7 +39,7 @@ timezone:      null
 
 
 #站点基础配置
-title: Simple
+title: Frank
 subTitle: 临渊羡鱼，不如退而结网！
 description: 这是 Frank 的第一个博客，它是基于 Jekyll 搭建起来的。在这里，用来记录我想要记录的时刻。
 url: "http://loudou140806.github.io/myblog"
@@ -87,7 +87,7 @@ follow:
   #   url: http://www.zhanxin.info
 
 #作者信息
-author:
+author: Frank
   link: http://www.zhanxin.info/contact.html
   img: http://tp2.sinaimg.cn/1832671293/180/40020872447/1
 

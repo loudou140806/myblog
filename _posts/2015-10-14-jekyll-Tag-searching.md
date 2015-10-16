@@ -2,7 +2,7 @@
 layout: post
 title: 标签搜索
 description: 根据文章标签搜索分类文章，转载自张雯莉的文章<a href="http://zhangwenli.com/blog/2014/05/18/jekyll-tag-searching/">jekyll Tag Searching</a>,我将它翻译成了中文。
-tags: Jekyll Tag Liquid Javascript 博客搭建
+tags: jekyll tag liquid javascript 博客搭建
 ---
 
 >在这篇文章中你将学到什么？
@@ -53,6 +53,46 @@ window.onload = function() {
         document.getElementById('tagTitle').innerHTML = 'Illegal Tag Query';
     }
 };
+{% endhighlight %}
+
+不过偷偷看了一下她的源码，发现并没有用文章当中的代码，而是下面这样的，所以我的博客当中也用了这样的方法。
+
+{% highlight js %}
+<script type="text/javascript">
+    // function queryString is copied from
+    // http://stackoverflow.com/questions/979975/how-to-get-the-value-from-url-parameter#answer-979995
+    function queryString() {
+      // This function is anonymous, is executed immediately and
+      // the return value is assigned to QueryString!
+      var query_string = {};
+      var query = window.location.search.substring(1);
+      var vars = query.split("&");
+      for (var i=0;i<vars.length;i++) {
+        var pair = vars[i].split("=");
+        // If first entry with this name
+        if (typeof query_string[pair[0]] === "undefined") {
+            query_string[pair[0]] = pair[1];
+        // If second entry with this name
+        } else if (typeof query_string[pair[0]] === "string") {
+            var arr = [ query_string[pair[0]], pair[1] ];
+            query_string[pair[0]] = arr;
+        // If third or later entry with this name
+        } else {
+            query_string[pair[0]].push(pair[1]);
+        }
+      }
+        return query_string;
+    }
+    
+    window.onload = function() {
+        var query = queryString();
+
+        if (query.tag !== undefined) {
+            var tag = decodeURI(query.tag);
+            $('.violet-title-item').text('Posts tagged with ' + tag);
+            $('.violet-post').not('.tag-' + tag).hide();
+        }
+    };
 {% endhighlight %}
 
 ### 7. 添加链接到标签

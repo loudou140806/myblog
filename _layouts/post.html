@@ -44,3 +44,17 @@ comment: true
         {% endif %}
     <!-- {% endif %} -->
 </div>
+<script>
+    (function(){
+        var aImg = document.getElementsByTagName('img');
+        aImg = Array.prototype.slice.call(aImg);
+        aImg.map(function(elme){
+        
+            EventUtil.addHandler(elme, "load", function(event){
+                event = EventUtil.getEvent(event);
+                var target = EventUtil.getTarget(event);
+                target.src = target.dataset.rsrc;
+            });
+        });
+    })();
+</script>
