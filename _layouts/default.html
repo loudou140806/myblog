@@ -202,18 +202,18 @@
         $("#violet-head").css({
             "background-image": "url(" + headImgArr[item] + ")"
         });
-        (function(){
-            var aImg = document.getElementsByTagName('img');
-            aImg = Array.prototype.slice.call(aImg);
-            aImg.map(function(elme, i){
-                    EventUtil.addHandler(elme, "load", function(event){
-                        console.log(i);
-                        event = EventUtil.getEvent(event);
-                        var target = EventUtil.getTarget(event);
-                        target.src = target.dataset.rsrc;
-                    });
-            });
-        })();
+        // (function(){
+        //     var aImg = document.getElementsByTagName('img');
+        //     aImg = Array.prototype.slice.call(aImg);
+        //     aImg.map(function(elme, i){
+        //             EventUtil.addHandler(elme, "load", function(event){
+        //                 console.log(i);
+        //                 event = EventUtil.getEvent(event);
+        //                 var target = EventUtil.getTarget(event);
+        //                 target.src = target.dataset.rsrc;
+        //             });
+        //     });
+        // })();
     </script>
     {% if page.comment %}
         <!-- {% if site.disqus.config %}
