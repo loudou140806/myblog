@@ -24,12 +24,12 @@
     <meta name="keywords" content="{{ page.keywords | join: ',' }}" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
     <!-- //页面样式 -->
-    <link rel="stylesheet" href="{{ site.url }}{{ site.themes }}/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="{{ site.url }}/css/style.css" type="text/css" />
     <link rel="stylesheet" href="{{ site.url }}/css/pygments.css" type="text/css" />
     <link rel="alternate" type="application/atom+xml" title="Recent Entries" href="{{ site.feed }}" />
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Spirax' rel='stylesheet' type='text/css'>
-    <link rel="shortcut icon" href="{{ site.url }}{{ site.themes }}/images/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="{{ site.url }}/images/favicon.ico" type="image/x-icon" />
     <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 </head>
 <body id="violet">
@@ -75,126 +75,21 @@
         </footer>
     </div>
 
-    <script type="text/javascript" src="{{ site.url }}{{ site.themes }}/js/jquery-1.8.3.js"></script>
-    <script type="text/javascript" src="{{ site.url }}{{ site.themes }}/js/jquery-scrollTo.js"></script>
-    <script type="text/javascript" src="{{ site.url }}{{ site.themes }}/js/common.js"></script>
+    <script type="text/javascript" src="{{ site.url }}/js/jquery-1.8.3.js"></script>
+    <script type="text/javascript" src="{{ site.url }}/js/jquery-scrollTo.js"></script>
+    <script type="text/javascript" src="{{ site.url }}/js/common.js"></script>
+    <script type="text/javascript" src="{{ site.url }}/js/jquery.lazyload.min.js"></script>
     <script type="text/javascript" defer="defer">
-        var EventUtil = {
-
-            addHandler: function(element, type, handler){
-                if (element.addEventListener){
-                    element.addEventListener(type, handler, false);
-                } else if (element.attachEvent){
-                    element.attachEvent("on" + type, handler);
-                } else {
-                    element["on" + type] = handler;
-                }
-            },
-            
-            getButton: function(event){
-                if (document.implementation.hasFeature("MouseEvents", "2.0")){
-                    return event.button;
-                } else {
-                    switch(event.button){
-                        case 0:
-                        case 1:
-                        case 3:
-                        case 5:
-                        case 7:
-                            return 0;
-                        case 2:
-                        case 6:
-                            return 2;
-                        case 4: return 1;
-                    }
-                }
-            },
-            
-            getCharCode: function(event){
-                if (typeof event.charCode == "number"){
-                    return event.charCode;
-                } else {
-                    return event.keyCode;
-                }
-            },
-            
-            //得到剪贴板内容
-            getClipboardText: function(event){
-                var clipboardData =  (event.clipboardData || window.clipboardData);
-                return clipboardData.getData("text");
-            },
-            
-            getEvent: function(event){
-                return event ? event : window.event;
-            },
-            
-            getRelatedTarget: function(event){
-                if (event.relatedTarget){
-                    return event.relatedTarget;
-                } else if (event.toElement){
-                    return event.toElement;
-                } else if (event.fromElement){
-                    return event.fromElement;
-                } else {
-                    return null;
-                }
-            
-            },
-            
-            getTarget: function(event){
-                return event.target || event.srcElement;
-            },
-            
-            getWheelDelta: function(event){
-                if (event.wheelDelta){
-                    return (client.engine.opera && client.engine.opera < 9.5 ? -event.wheelDelta : event.wheelDelta);
-                } else {
-                    return -event.detail * 40;
-                }
-            },
-            
-            preventDefault: function(event){
-                if (event.preventDefault){
-                    event.preventDefault();
-                } else {
-                    event.returnValue = false;
-                }
-            },
-
-            removeHandler: function(element, type, handler){
-                if (element.removeEventListener){
-                    element.removeEventListener(type, handler, false);
-                } else if (element.detachEvent){
-                    element.detachEvent("on" + type, handler);
-                } else {
-                    element["on" + type] = null;
-                }
-            },
-            
-            //设置剪贴板内容
-            setClipboardText: function(event, value){
-                if (event.clipboardData){
-                    event.clipboardData.setData("text/plain", value);//Chorme是text/plain
-                } else if (window.clipboardData){
-                    window.clipboardData.setData("text", value);//IE是text
-                }
-            },
-            
-            stopPropagation: function(event){
-                if (event.stopPropagation){
-                    event.stopPropagation();
-                } else {
-                    event.cancelBubble = true;
-                }
-            }
-
-        };
+        $("img").lazyload({
+            placeholder:"{{ site.url }}/images/loading.gif",
+            effect:"fadeIn",
+        });
         var headImgArr = [];
         {% for imgsrc in site.headimg %}
             headImgArr.push("{{ imgsrc.item }}");
         {% endfor %}
         if(headImgArr.length <= 0) {
-            headImgArr = ["/myblog/themes/violet/images/hdbg03.jpg"];
+            headImgArr = ["/myblog/images/hdbg03.jpg"];
             var item = 0;
         } else {
             var item = Math.floor(Math.random() * (headImgArr.length));
@@ -202,18 +97,6 @@
         $("#violet-head").css({
             "background-image": "url(" + headImgArr[item] + ")"
         });
-        // (function(){
-        //     var aImg = document.getElementsByTagName('img');
-        //     aImg = Array.prototype.slice.call(aImg);
-        //     aImg.map(function(elme, i){
-        //             EventUtil.addHandler(elme, "load", function(event){
-        //                 console.log(i);
-        //                 event = EventUtil.getEvent(event);
-        //                 var target = EventUtil.getTarget(event);
-        //                 target.src = target.dataset.rsrc;
-        //             });
-        //     });
-        // })();
     </script>
     {% if page.comment %}
         <!-- {% if site.disqus.config %}

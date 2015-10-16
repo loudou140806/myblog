@@ -54,18 +54,15 @@ nav:
   - text: 作品
     url: /myblog/works.html
 
-#theme config
-themes: /themes/violet
-
 #配置你喜欢的顶部背景图片
 headimg:
-  - item: /myblog/themes/violet/images/hdbg01.jpg
-  - item: /myblog/themes/violet/images/hdbg02.jpg
-  - item: /myblog/themes/violet/images/hdbg03.jpg
-  - item: /myblog/themes/violet/images/hdbg04.jpg
-  - item: /myblog/themes/violet/images/hdbg05.jpg
-  - item: /myblog/themes/violet/images/hdbg06.jpg
-  - item: /myblog/themes/violet/images/hdbg07.jpg
+  - item: /myblog/images/hdbg01.jpg
+  - item: /myblog/images/hdbg02.jpg
+  - item: /myblog/images/hdbg03.jpg
+  - item: /myblog/images/hdbg04.jpg
+  - item: /myblog/images/hdbg05.jpg
+  - item: /myblog/images/hdbg06.jpg
+  - item: /myblog/images/hdbg07.jpg
 
 #关注我
 follow:
