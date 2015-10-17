@@ -151,3 +151,78 @@ function selectText(textbox, startIndex, stopIndex){
 {% endhighlight %}
 
 * ###屏蔽非数值字符，但不屏蔽那些会触发keypress的非数值字符，
+
+{% highlight js %}
+EventUtil.addHandler(oInput, "keypress", function(event){
+    event = EventUtil.getEvent(event);
+    var target = EventUtil.getTarget(event);
+    var charCode = EventUtil.getCharCode(event);
+    var re = RegExp(/\d/);
+    if(!re.test(String.fromCharCode(charCode)) && charCode > 9 && !event.ctrlkey ){
+        EventUtil.preventDefault(event);
+    }
+});
+{% endhighlight %}
+
+
+* ###跨浏览器处理XML(将XML转化为DOM文档)
+
+接收一个参数，即可解析的XML字符串。通过能力检测来确定要用的XML解析方式。DOMP安染色认识支持最对的解决方案。然后检测了对ActiveX的支持，并使用前面定义的createDocument()函数来创建适当版本的XML文档。同样也需要检测结果，以防有错误发生。
+
+{% highlight js %}
+function parseXml(xml){
+    var xmldom = null;
+
+    if(typeof DOMParser != "undefinde"){
+        xmldom = (new DOMParser()).parseFeomString(xml, "text/xml");
+        var errors = smldom.getElementsByTagName("parsererror");
+        if(error.length){
+            throw new Error("XML parsing error:" + error[0].textContent);
+        }
+    }else if(typeof ActiveXObject != "undefined"){
+        xmldom = createDocument();
+        xmldom.loadXML(xml);
+        if(xmldom.parseError != 0){
+            throw new Error("XML parsing error :" +xmldom.parseError.reason);
+        }
+    }else{
+        thorow new Error("No XML parser avaiable.")
+    }
+    return xmldom;
+}
+{% endhighlight %}
+
+* ###XHR对象创建
+
+{% highlight js %}
+var xhr = null;
+try {
+    xhr = new XMLHttpRequest();
+} catch (e) {
+    xhr = new ActiveXObject('Microsoft.XMLHTTP');
+}
+{% endhighlight %}
+
+* ###跨浏览器的CORS
+
+{% highlight js %}
+function createCORSRequest(method, url){
+    var xhr = new XMLHttpRequest();
+    if("withCredentials" in xhr){
+    xhr.open(method, url, true);
+    }else if(typeof XDomainRequest != "undefined"){
+        xhr = new XDomainRequest();
+        xhr.open(method, url);
+    }else{
+        xhr = null;
+    }
+}
+
+var request = createCORSRequest("get", "http://www.baidu.com/page/");
+if(request){
+    request.onload = function(){
+    //对request.responseText进行处理
+    }；
+    request.send();
+}
+{% endhighlight %}
