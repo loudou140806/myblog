@@ -226,3 +226,24 @@ if(request){
     request.send();
 }
 {% endhighlight %}
+
+* ###localStorange对象
+
+{% highlight js %}
+function getLocalStorange(){
+	if(typeof localStorange == "object"){
+		return localStorange;
+	}else if(typeof globalStorange == "object"){
+		return globalStorange[location.host];
+	}else{
+		throw new Error("Local storange not avaiable.");
+	}
+}
+{% endhighlight %}
+
+*###indexedDB
+
+{% highlight js %}
+var indexedDB = window.indexedDB || window.msIndexDB || windwo.mozIndexDB || window.webkitIndexedDB;
+var IDBKeyRange = window.IDBKeyRange ||window.webkitIDBKeyRange;
+{% endhighlight %}

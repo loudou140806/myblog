@@ -1,7 +1,7 @@
 ---
 layout: post
 title: JavaScript 高级技巧
-tags: 高级函数 防篡改对象 密封对象 冻结对象 拖放
+tags: 高级函数 防篡改对象 密封对象 冻结对象 拖放 javascript
 keys: 高级函数 防篡改对象 密封对象 冻结对象 拖放
 description: JavaScript是一种极其灵活的语言，具有多种使用风格。一般来说，编写JacaScript要么使用过程方式，要么使用面向对象方式。然而由于它天生的动态属性，这种语言还能使用更为复杂有趣的模式。这些技巧要利用ECMAScript的语言特点、BOM扩展和DOM功能来获得强大的效果。
 ---
@@ -244,6 +244,7 @@ alert(person.name);//"loudou"
 
 ####拖放
 
+{% highlight js %}
 var  DragDrop = function(){
 	
 	var dragging = null;
@@ -292,3 +293,4 @@ var  DragDrop = function(){
 		}
 	}
 }();
+{% endhighlight %}
