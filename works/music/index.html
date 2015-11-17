@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>music</title>
+	<style>
+		body{ background:#eee; color:#999; overflow:hidden;}
+		ul,li,img,body{
+			padding: 0;
+			margin: 0;
+		}
+		li{
+			list-style:none;
+		}
+		img{
+			border:none;
+		}
+		.progress{ 
+			width:100%;
+			height: 4px;
+		}
+		.progress2{
+			width: 10%; 
+			height: 4px; 
+			background:#666;}
+		.btnarea{ 
+			position:absolute;
+			left:0;
+			width: 100%; 
+			height:300px;
+			-webkit-transition: transform 1s cubic-bezier(.445, .05, .55, .95);
+			    -moz-transition: transform 1s cubic-bezier(.445, .05, .55, .95);
+			     -ms-transition: transform 1s cubic-bezier(.445, .05, .55, .95);
+			      -o-transition: transform 1s cubic-bezier(.445, .05, .55, .95);
+			         transition: transform 1s cubic-bezier(.445, .05, .55, .95);
+			         z-index:10;
+		}
+		.btn{
+			cursor:pointer;
+		}
+		.line1{width:2px; height:200px;background:#fff;left:30%; position:absolute;}
+		.arc1{width:100px; height: 100px; border-radius: 50%; position:absolute; top:160px;left:-49px;background-color:#fff; text-align:center; line-height:100px;color:#999;}
+
+		.line2{width:2px; height:100px;background:#fff;left:40%; position:absolute;}
+		.arc2{width:60px; height: 60px; border-radius: 50%; position:absolute; top:100px;left:-29px;background-color:#fff; text-align:center; line-height:60px;color:#999;}
+
+		.line3{width:2px; height:160px;background:#fff;left:50%; position:absolute;}
+		.arc3{width:120px; height: 120px; border-radius: 50%; position:absolute; top:160px;left:-59px;background-color:#fff; text-align:center; line-height:120px;color:#999;}
+
+		.line4{width:2px; height:60px;background:#fff;left:60%; position:absolute;}
+		.arc4{width:80px; height: 80px; border-radius: 50%; position:absolute; top:60px;left:-39px;background-color:#fff; text-align:center; line-height:80px;color:#999;}
+
+		.line5{width:2px; height:200px;background:#fff;left:70%; position:absolute;}
+		.arc5{width:100px; height: 100px; border-radius: 50%; position:absolute; top:160px;left:-49px;background-color:#fff; text-align:center; line-height:100px;color:#999;}
+
+		.oul{
+			position:absolute;
+			left:0;
+			bottom: 0;
+			-webkit-transition: transform .4s cubic-bezier(.445, .05, .55, .95);
+			   -moz-transition: transform .4s cubic-bezier(.445, .05, .55, .95);
+			    -ms-transition: transform .4s cubic-bezier(.445, .05, .55, .95);
+			     -o-transition: transform .4s cubic-bezier(.445, .05, .55, .95);
+			        transition: transform .4s cubic-bezier(.445, .05, .55, .95);
+		}
+		.oul li{
+			width:14%;
+			float:left;
+			position:relative;
+			-webkit-transition: transform .4s cubic-bezier(.445, .05, .55, .95);
+			   -moz-transition: transform .4s cubic-bezier(.445, .05, .55, .95);
+			    -ms-transition: transform .4s cubic-bezier(.445, .05, .55, .95);
+			     -o-transition: transform .4s cubic-bezier(.445, .05, .55, .95);
+			        transition: transform .4s cubic-bezier(.445, .05, .55, .95);
+		}
+		.oul li img{
+			width: 100%;
+			height:auto;
+			position:relative;
+			will-change: transform;
+			background-size: contain;
+			background-repeat: no-repeat;
+			-webkit-transition: transform .4s cubic-bezier(0, .68, .86, .98);
+			   -moz-transition: transform .4s cubic-bezier(0, .68, .86, .98);
+			    -ms-transition: transform .4s cubic-bezier(0, .68, .86, .98);
+			     -o-transition: transform .4s cubic-bezier(0, .68, .86, .98);
+			        transition: transform .4s cubic-bezier(0, .68, .86, .98);
+		}
+		.oul li:nth-child(1) img{
+			-webkit-transform: translate3d(0px, 63%, 0px);
+			   -moz-transform: translate3d(0px, 63%, 0px);
+			    -ms-transform: translate3d(0px, 63%, 0px);
+			     -o-transform: translate3d(0px, 63%, 0px);
+			        transform: translate3d(0px, 63%, 0px);
+			background-image: url("img/1-1.png")/*tpa=http://www.miaov.com/student/music/img/1-1.png*/;
+		}
+		.oul li:nth-child(2) img{
+			-webkit-transform: translate3d(0px, 47%, 0px);
+			   -moz-transform: translate3d(0px, 47%, 0px);
+			    -ms-transform: translate3d(0px, 47%, 0px);
+			     -o-transform: translate3d(0px, 47%, 0px);
+			        transform: translate3d(0px, 47%, 0px);
+			background-image: url("img/2-2.png")/*tpa=http://www.miaov.com/student/music/img/2-2.png*/; 
+		}
+		.oul li:nth-child(3) img{
+			-webkit-transform: translate3d(0px, 67%, 0px);
+			   -moz-transform: translate3d(0px, 67%, 0px);
+			    -ms-transform: translate3d(0px, 67%, 0px);
+			     -o-transform: translate3d(0px, 67%, 0px);
+			        transform: translate3d(0px, 67%, 0px);
+			background-image: url("img/3-3.png")/*tpa=http://www.miaov.com/student/music/img/3-3.png*/;
+		}
+		.oul li:nth-child(4) img{
+			-webkit-transform: translate3d(0px, 47%, 0px);
+			   -moz-transform: translate3d(0px, 47%, 0px);
+			    -ms-transform: translate3d(0px, 47%, 0px);
+			     -o-transform: translate3d(0px, 47%, 0px);
+			        transform: translate3d(0px, 47%, 0px);
+			background-image: url("img/4-4.png")/*tpa=http://www.miaov.com/student/music/img/4-4.png*/;
+		}
+		.oul li:nth-child(5) img{
+			-webkit-transform: translate3d(0px, 27%, 0px);
+			   -moz-transform: translate3d(0px, 27%, 0px);
+			    -ms-transform: translate3d(0px, 27%, 0px);
+			     -o-transform: translate3d(0px, 27%, 0px);
+			        transform: translate3d(0px, 27%, 0px);
+			background-image: url("img/5-5.png")/*tpa=http://www.miaov.com/student/music/img/5-5.png*/; 	
+		}
+		.oul li:nth-child(6) img{
+			-webkit-transform: translate3d(0px, 47%, 0px);
+			   -moz-transform: translate3d(0px, 47%, 0px);
+			    -ms-transform: translate3d(0px, 47%, 0px);
+			     -o-transform: translate3d(0px, 47%, 0px);
+			        transform: translate3d(0px, 47%, 0px);
+			background-image: url("img/6-6.png")/*tpa=http://www.miaov.com/student/music/img/6-6.png*/; 	
+		}
+		.oul li:nth-child(7) img{
+			-webkit-transform: translate3d(0px, 61%, 0px);
+			   -moz-transform: translate3d(0px, 61%, 0px);
+			    -ms-transform: translate3d(0px, 61%, 0px);
+			     -o-transform: translate3d(0px, 61%, 0px);
+			        transform: translate3d(0px, 61%, 0px);
+			background-image: url("img/7-7.png")/*tpa=http://www.miaov.com/student/music/img/7-7.png*/; 	
+		}
+		.prev{
+			transform: translate3d(-13%,0,0);
+		}
+		.next{
+			transform:translate3d(13%, 0, 0);
+		}
+		#music li:nth-child(n) img{
+			transform: translate3d(0, 25%, 0)!important;
+		}
+		#music ul li.larger img{
+			transform: translate3d(0, 15%, 0)!important;
+		}
+		.active{ box-shadow:1px 1px 5px 0px rgba(0,0,0,0.2); color:#fff;}
+		.div1 {
+				width: 100%;
+				position: absolute;
+				left: 0;
+				bottom: -10px;
+				height: 1000px;
+				overflow:hidden;
+			}
+	</style>
+
+	<script>
+		function view(){
+			return {
+				W:document.documentElement.clientWidth || document.body.clientWidth
+			};
+		}
+		function offsetL(obj){
+			var left = 0;
+			while( obj ) {
+				left += obj.offsetLeft;
+				obj = obj.offsetParent;
+			}
+			return left;
+		}
+		function getByClass(parent, tagname, classname) { //通过Class名字获取元素
+			var aEls = parent.getElementsByTagName(tagname);
+			var arr = [];
+			var re = new RegExp('(^|\\s)' + classname + '(\\s|$)');
+			for (var i = 0; i < aEls.length; i++) {
+				if (re.test(aEls[i].className)) {
+					arr.push(aEls[i]);
+				}
+			}
+			return arr;
+		}
+		function removeClass(obj, oClass) {
+			var aClass = obj.className.split(' ');
+			if(!obj.className) return;
+			for (var i = 0; i < aClass.length; i++) {
+				if(aClass[i] === oClass){
+					aClass.splice(i, 1);
+					obj.className = aClass.join(' ');
+				}
+
+			}
+		}
+		function addClass(obj, oClass) {
+			var aClass = obj.className.split(' ');
+			if (!obj.className) {
+				obj.className = oClass;
+				return;
+			}
+			for(var i = 0;i < aClass.length; i++) {
+				if(aClass[i] === oClass) {
+					return;
+				}
+			}
+			obj.className += " " + oClass;
+		}
+		function listenEvent(element, type, handler){
+			if (element.adEventListener) {
+				element.addEventListener(type, handler);
+			}else if (element.attachEvent) {
+				element.attachEvent('on' + type, handler);
+			}else {
+				element['on' + type] = handler;
+			}
+		}
+		window.onload = function(){
+
+			var aImg = document.getElementsByTagName('img'),
+				aLi = document.getElementsByTagName('li'),
+				btn = getByClass(document, 'div', 'btnarea')[0],
+				oUl = getByClass(document, 'ul', 'oul')[0],
+				btnonoff = true,
+				timer = null,clientX = 0,timers = 0,
+
+				// 受影响的最大范围值
+				l = oUl.offsetWidth / 7 * 5;
+
+			for(var i = 0 ;i < aLi.length; i++){
+				aImg[i].index = i;
+			}
+
+			for(i = 0; i < aLi.length; i++){
+				aLi[i].style.width = view().W / 7 /view().W * 100 + "%";
+			}
+
+			oUl.onmousemove = moveFn;
+			oUl.onmouseout = outFn;
+
+			function animation() {
+
+				var timer2 = new Date().valueOf();
+
+				for(var  j = 0; j < aImg.length; j++){
+
+					// 中心点X轴的距离
+					var middle = offsetL( aImg[j] ) + aImg[j].offsetWidth / 2;
+					// 鼠标到每张图片中心点X轴的差值
+					var distance = Math.abs( clientX - middle ) ;
+				
+					if( distance > l ) {
+						distance = l;
+					}
+
+					// 得到一个比例
+					var scale = Math.abs( distance / l ) * 80;
+
+					// 得到当前图片的Y轴值
+					var top = aImg[j].getBoundingClientRect().top - aLi[j].getBoundingClientRect().top;
+
+					var n = top / aImg[j].offsetHeight * 100;
+
+					//摩擦系数
+					var t = (scale - n)/5;
+					n += t;
+
+					aImg[j].style.transform = "translate3d(0, "+ n +"%, 0)";
+					aImg[j].style.webkitTransform = "translate3d(0, "+ n +"%, 0)";
+					aImg[j].style.transition = "none";
+					aImg[j].style.webkitTransition = "none"; 
+				}  
+
+				if( timer2 - timers <1000){
+					timer = requestAnimationFrame( animation );
+				}
+			}
+			
+			function moveFn(ev){
+
+				clientX = ev.clientX;
+
+				cancelAnimationFrame( timer );
+				timer = requestAnimationFrame( animation );
+
+				var timers = new Date().valueOf();
+							
+			}
+			function outFn() {
+				cancelAnimationFrame( timer );
+
+				for( var i = 0; i < aImg.length; i++){
+					aImg[i].removeAttribute("style");
+				}
+			}
+
+			oUl.onclick = function(ev){
+
+				ev = ev || event;
+				cancelAnimationFrame( timer );
+				var target = ev.target;
+				
+
+				if (!btnonoff) {
+
+					oUl.removeAttribute("style");
+					btn.style.transform = "translateY(0px)";
+					btn.style.webkitTransform = "translateY(0px)";
+
+					for (var j = 0; j < aLi.length; j++) {
+						aLi[j].className = "";
+					}
+
+					document.body.id = "";
+
+					setTimeout(function (){
+						oUl.onmousemove = moveFn;
+						oUl.onmouseout = outFn;
+						btnonoff = true;	
+					},300)
+					
+				}else {
+					if ( target.nodeName.toLowerCase() === "img" ){
+	
+						btn.style.transform = "translateY(-350px)";
+
+						for(var j = 0 ; j< aImg.length; j++){
+							aImg[j].style.transition = "transform .4s cubic-bezier(.445,.05,.55,.95)";
+							aImg[j].style.wenkitTransition = "transform .4s cubic-bezier(.445,.05,.55,.95)";
+						}
+						document.body.id = "music";
+
+						for(i = 0;i<aImg.length;i++) {
+							if (i < target.index) {
+									aImg[i].parentNode.className = "prev";
+							}else if (i > target.index) {
+								aImg[i].parentNode.className = "next";
+							}
+							target.parentNode.className = "larger";
+						}
+
+						// 每张图中心的左边距
+						var targetMiddle = offsetL( target ) + target.offsetWidth / 2;
+
+						// ul需要移动的距离
+						var value = view().W / 2 - targetMiddle;
+
+						oUl.style.transform = "translate3d("+value*2.5+"px,0,0) scale(2.5)";
+						oUl.style.webkitTransform = "translate3d("+value*2.5+"px,0,0) scale(2.5)";
+ 
+						oUl.onmousemove = null;
+						oUl.onmouseout = null;
+
+						btnonoff = false;
+					}
+				} 	
+			};
+
+			(function(){
+				try {
+					var audio = new Audio();
+				} catch(e) {
+					throw new Error('the Web Audio API is unvailable');
+				}
+				var btn = getByClass(document, 'div', 'btn');
+				var progress = getByClass(document, 'div', 'progress2')[0];
+				var audioContext,analyser,sourceNode,data,num,k,m,n;
+
+				var color = [
+					'#ffd96d',
+					'#8cf6f3',
+					'#92aef0',
+					'#b897e4',
+					'#ff5f5b',
+					'#ffb66e',
+				];
+
+				var musicList = [
+					'img/mo.mp3',
+					'img/Rihanna - Only Girl (In The World).mp3',
+					'img/Remix.mp3',
+					'img/Neptune Illusion Dennis Kuo .mp3'
+				];
+
+				function getNum() {
+					return Math.round(Math.random()*(color.length - 1));
+				}
+
+				for (var i = 0; i<btn.length; i++) {
+					btn[i].index = i;
+					btn[i].onclick = function(){
+
+						for (j = 0;j < btn.length; j++) {
+							removeClass(btn[j], 'active');
+							btn[j].style.cssText = '';
+							btn[j].parentNode.style.background = "#fff";
+						}
+						int();
+						
+						audio.src = musicList[this.index];
+						audio.play();
+						play();
+						btnNow = this;
+						addClass(btnNow, 'active');
+						colorNow = getNum();
+						// console.log(colorNow);
+						this.style.background = color[colorNow];
+						this.parentNode.style.background = color[colorNow];
+					}
+				}
+
+				function int() {
+					audio.pause();
+					audio = null;
+					audio = new Audio;
+				}
+
+				btn[btn.length - 1].onclick = function() {
+					int();
+				};
+
+				function play() {
+					listenEvent(audio, 'canplay', function(){
+						// console.log('play');
+						analyser = sourceNode = null;
+						setup();
+					});
+				}
+				function setup() {
+
+					// console.log('setup');
+
+					//得到音频数据创建的对象
+					audioContext = new (window.AudioContext || window.webAudioContext || window.webkitAudioContext)();
+					console.log(audioContext);
+
+					//调用音频解码器
+					analyser = (analyser || audioContext.createAnalyser());
+					console.log(analyser);
+					sourceNode = audioContext.createMediaElementSource(audio);
+					console.log(sourceNode);
+					audio.play();
+
+					sourceNode.connect(analyser);
+					sourceNode.connect(audioContext.destination);
+					
+					update();
+				}
+				function update() {
+
+					//audio.paused  设置或返回音频/视频是否暂停\
+					//audio.currentTime 视频/音频已经播放的时（以秒记）
+					//audio.currentTime 设置或返回音频/视频中的当前播放位置（以秒计）
+					progress.style.width = audio.currentTime / audio.duration * 100 + '%';
+
+					/* 定义一个 Uint8Array 字节流去接收分析后的数据 */
+					data = new Uint8Array(analyser.frequencyBinCount);
+					//得到数组
+			        analyser.getByteFrequencyData(data);
+
+			        fn(data);
+
+			        if(audio.paused){
+			        	data = null;
+			        	for( var i = 0; i < 7; i++ ){
+			        		aImg[i].style.cssText = '';
+			        	}
+			        }else{
+			        	requestAnimationFrame(update);
+			        }
+				}
+			    function fn(arr){
+
+			    	//步长
+			    	var step = Math.round(arr.length / 8); 
+			    	for( var i = 0; i < 7; i++ ){
+			    		num = arr[i * step];
+			    		k = (num) / aImg[i].offsetHeight * 100;
+						m = 100 - k;
+						n = (m-30)>0?(m-30):0;
+			    		aImg[i].style.cssText = "-webkit-transform:(0," + n + "%,0);transform:translate3d(0," + n +"%,0)";
+						if(i==0){
+							btnNow.style.webkitTransform = 'translateY(-50px) scale('+ (2-m/80) +','+ (2-m/80) +')';
+						};
+			    	}
+			    }
+			}());
+
+		};
+	</script>
+</head>
+<body>
+	<div class="progress"><div class="progress2">&nbsp;</div></div>
+	<div class="btnarea" id="btn">
+		<div class="line1">
+			<div class="btn arc1">轻柔</div>
+		</div>
+		<div class="line2">
+			<div class="btn arc2">节奏</div>
+		</div>
+		<div class="line3">
+			<div class="btn arc3">DJ</div>
+		</div>
+		<div class="line4">
+			<div class="btn arc4">纯音乐</div>
+		</div>
+		<div class="line5">
+			<div class="btn arc5">停止</div>
+		</div>
+	</div>
+	<div class="div1">
+		<ul class="oul" id="oul">
+			<li>
+				<img src="img/1-1.png" alt="">
+			</li>
+			<li>
+				<img src="img/2-2.png" alt="">
+			</li>
+			<li>
+				<img src="img/3-3.png" alt="">
+			</li>
+			<li>
+				<img src="img/4-4.png" alt="">
+			</li>
+			<li>
+				<img src="img/5-5.png" alt="">
+			</li>
+			<li>
+				<img src="img/6-6.png" alt="">
+			</li>
+			<li>
+				<img src="img/7-7.png" alt="">
+			</li>
+		</ul>
+	</div>
+</body>
+</html>

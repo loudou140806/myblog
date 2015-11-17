@@ -247,3 +247,9 @@ function getLocalStorange(){
 var indexedDB = window.indexedDB || window.msIndexDB || windwo.mozIndexDB || window.webkitIndexedDB;
 var IDBKeyRange = window.IDBKeyRange ||window.webkitIDBKeyRange;
 {% endhighlight %}
+
+*###requestAnimationFrame
+{% highlight js %}
+window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || 
+window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+{% endhighlight %}
