@@ -2,7 +2,8 @@
 layout: post
 title: 跨浏览器兼容
 tags: IE6 IE7 firefox safri chrome
-css常见问题
+keys: IE6 IE7 firefox safri chrome
+description: css常见兼容性问题（IE6,7）,PNG兼容性问题（IE6，7）
 ---
 
 ##CSS常见问题
