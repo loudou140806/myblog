@@ -723,7 +723,7 @@ hack 黑客？ （原意：修改）
 DD_belatedPNG.fix('*');
 </script>
 <![endif]-->
-{% endHighlight %}
+{% endhighlight %}
 
 ###默认 < 类型 < class < id < style(行间) < !important 
 !important  提升样式优先级权重
