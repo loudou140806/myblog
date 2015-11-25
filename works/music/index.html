@@ -14,7 +14,7 @@
 		}
 		img{
 			border:none;
-		}
+		}R
 		.progress{ 
 			width:100%;
 			height: 4px;
@@ -28,10 +28,7 @@
 			left:0;
 			width: 100%; 
 			height:300px;
-			-webkit-transition: transform 1s cubic-bezier(.445, .05, .55, .95);
-			    -moz-transition: transform 1s cubic-bezier(.445, .05, .55, .95);
-			     -ms-transition: transform 1s cubic-bezier(.445, .05, .55, .95);
-			      -o-transition: transform 1s cubic-bezier(.445, .05, .55, .95);
+			-webkit-transition: -webkit-transform 1s cubic-bezier(.445, .05, .55, .95);
 			         transition: transform 1s cubic-bezier(.445, .05, .55, .95);
 			         z-index:10;
 		}
@@ -41,36 +38,30 @@
 		.line1{width:2px; height:200px;background:#fff;left:30%; position:absolute;}
 		.arc1{width:100px; height: 100px; border-radius: 50%; position:absolute; top:160px;left:-49px;background-color:#fff; text-align:center; line-height:100px;color:#999;}
 
-		.line2{width:2px; height:100px;background:#fff;left:40%; position:absolute;}
+		.line2{width:2px; height:130px;background:#fff;left:40%; position:absolute;}
 		.arc2{width:60px; height: 60px; border-radius: 50%; position:absolute; top:100px;left:-29px;background-color:#fff; text-align:center; line-height:60px;color:#999;}
 
-		.line3{width:2px; height:160px;background:#fff;left:50%; position:absolute;}
+		.line3{width:2px; height:220px;background:#fff;left:50%; position:absolute;}
 		.arc3{width:120px; height: 120px; border-radius: 50%; position:absolute; top:160px;left:-59px;background-color:#fff; text-align:center; line-height:120px;color:#999;}
 
-		.line4{width:2px; height:60px;background:#fff;left:60%; position:absolute;}
+		.line4{width:2px; height:100px;background:#fff;left:60%; position:absolute;}
 		.arc4{width:80px; height: 80px; border-radius: 50%; position:absolute; top:60px;left:-39px;background-color:#fff; text-align:center; line-height:80px;color:#999;}
 
-		.line5{width:2px; height:200px;background:#fff;left:70%; position:absolute;}
+		.line5{width:2px; height:210px;background:#fff;left:70%; position:absolute;}
 		.arc5{width:100px; height: 100px; border-radius: 50%; position:absolute; top:160px;left:-49px;background-color:#fff; text-align:center; line-height:100px;color:#999;}
 
 		.oul{
 			position:absolute;
 			left:0;
 			bottom: 0;
-			-webkit-transition: transform .4s cubic-bezier(.445, .05, .55, .95);
-			   -moz-transition: transform .4s cubic-bezier(.445, .05, .55, .95);
-			    -ms-transition: transform .4s cubic-bezier(.445, .05, .55, .95);
-			     -o-transition: transform .4s cubic-bezier(.445, .05, .55, .95);
+			-webkit-transition: -webkit-transform .4s cubic-bezier(.445, .05, .55, .95);
 			        transition: transform .4s cubic-bezier(.445, .05, .55, .95);
 		}
 		.oul li{
 			width:14%;
 			float:left;
 			position:relative;
-			-webkit-transition: transform .4s cubic-bezier(.445, .05, .55, .95);
-			   -moz-transition: transform .4s cubic-bezier(.445, .05, .55, .95);
-			    -ms-transition: transform .4s cubic-bezier(.445, .05, .55, .95);
-			     -o-transition: transform .4s cubic-bezier(.445, .05, .55, .95);
+			-webkit-transition: -webkit-transform .4s cubic-bezier(.445, .05, .55, .95);
 			        transition: transform .4s cubic-bezier(.445, .05, .55, .95);
 		}
 		.oul li img{
@@ -80,81 +71,77 @@
 			will-change: transform;
 			background-size: contain;
 			background-repeat: no-repeat;
-			-webkit-transition: transform .4s cubic-bezier(0, .68, .86, .98);
-			   -moz-transition: transform .4s cubic-bezier(0, .68, .86, .98);
-			    -ms-transition: transform .4s cubic-bezier(0, .68, .86, .98);
-			     -o-transition: transform .4s cubic-bezier(0, .68, .86, .98);
+			-webkit-transition: -webkit-transform .4s cubic-bezier(0, .68, .86, .98);
 			        transition: transform .4s cubic-bezier(0, .68, .86, .98);
 		}
 		.oul li:nth-child(1) img{
 			-webkit-transform: translate3d(0px, 63%, 0px);
-			   -moz-transform: translate3d(0px, 63%, 0px);
 			    -ms-transform: translate3d(0px, 63%, 0px);
-			     -o-transform: translate3d(0px, 63%, 0px);
 			        transform: translate3d(0px, 63%, 0px);
 			background-image: url("img/1-1.png")/*tpa=http://www.miaov.com/student/music/img/1-1.png*/;
 		}
 		.oul li:nth-child(2) img{
 			-webkit-transform: translate3d(0px, 47%, 0px);
-			   -moz-transform: translate3d(0px, 47%, 0px);
 			    -ms-transform: translate3d(0px, 47%, 0px);
-			     -o-transform: translate3d(0px, 47%, 0px);
 			        transform: translate3d(0px, 47%, 0px);
 			background-image: url("img/2-2.png")/*tpa=http://www.miaov.com/student/music/img/2-2.png*/; 
 		}
 		.oul li:nth-child(3) img{
 			-webkit-transform: translate3d(0px, 67%, 0px);
-			   -moz-transform: translate3d(0px, 67%, 0px);
 			    -ms-transform: translate3d(0px, 67%, 0px);
-			     -o-transform: translate3d(0px, 67%, 0px);
 			        transform: translate3d(0px, 67%, 0px);
 			background-image: url("img/3-3.png")/*tpa=http://www.miaov.com/student/music/img/3-3.png*/;
 		}
 		.oul li:nth-child(4) img{
 			-webkit-transform: translate3d(0px, 47%, 0px);
-			   -moz-transform: translate3d(0px, 47%, 0px);
 			    -ms-transform: translate3d(0px, 47%, 0px);
-			     -o-transform: translate3d(0px, 47%, 0px);
 			        transform: translate3d(0px, 47%, 0px);
 			background-image: url("img/4-4.png")/*tpa=http://www.miaov.com/student/music/img/4-4.png*/;
 		}
 		.oul li:nth-child(5) img{
 			-webkit-transform: translate3d(0px, 27%, 0px);
-			   -moz-transform: translate3d(0px, 27%, 0px);
 			    -ms-transform: translate3d(0px, 27%, 0px);
-			     -o-transform: translate3d(0px, 27%, 0px);
 			        transform: translate3d(0px, 27%, 0px);
 			background-image: url("img/5-5.png")/*tpa=http://www.miaov.com/student/music/img/5-5.png*/; 	
 		}
 		.oul li:nth-child(6) img{
 			-webkit-transform: translate3d(0px, 47%, 0px);
-			   -moz-transform: translate3d(0px, 47%, 0px);
 			    -ms-transform: translate3d(0px, 47%, 0px);
-			     -o-transform: translate3d(0px, 47%, 0px);
 			        transform: translate3d(0px, 47%, 0px);
 			background-image: url("img/6-6.png")/*tpa=http://www.miaov.com/student/music/img/6-6.png*/; 	
 		}
 		.oul li:nth-child(7) img{
 			-webkit-transform: translate3d(0px, 61%, 0px);
-			   -moz-transform: translate3d(0px, 61%, 0px);
 			    -ms-transform: translate3d(0px, 61%, 0px);
-			     -o-transform: translate3d(0px, 61%, 0px);
 			        transform: translate3d(0px, 61%, 0px);
 			background-image: url("img/7-7.png")/*tpa=http://www.miaov.com/student/music/img/7-7.png*/; 	
 		}
 		.prev{
-			transform: translate3d(-13%,0,0);
+			-webkit-transform: translate3d(-13%, 0px, 0px);
+			    -ms-transform: translate3d(-13%, 0px, 0px);
+			        transform: translate3d(-13%, 0px, 0px);
 		}
 		.next{
-			transform:translate3d(13%, 0, 0);
+			-webkit-transform: translate3d(13%, 0px, 0px);
+			    -ms-transform: translate3d(13%, 0px, 0px);
+			        transform: translate3d(13%, 0px, 0px);
 		}
 		#music li:nth-child(n) img{
-			transform: translate3d(0, 25%, 0)!important;
+
+			-webkit-transform: translate3d(0px, 25%, 0px)!important;
+			    -ms-transform: translate3d(0px, 25%, 0px)!important;
+					transform: translate3d(0px, 25%, 0px)!important;
 		}
 		#music ul li.larger img{
-			transform: translate3d(0, 15%, 0)!important;
+			-webkit-transform: translate3d(0px, 15%, 0px)!important;
+			    -ms-transform: translate3d(0px, 15%, 0px)!important;
+			        transform: translate3d(0px, 15%, 0px)!important;
 		}
-		.active{ box-shadow:1px 1px 5px 0px rgba(0,0,0,0.2); color:#fff;}
+		.active{ 
+			-ms-box-shadow:1px 1px 5px 0px rgba(0,0,0,0.2); 
+			 -o-box-shadow:1px 1px 5px 0px rgba(0,0,0,0.2); 
+		box-shadow:1px 1px 5px 0px rgba(0,0,0,0.2); 
+			color:#fff;}
 		.div1 {
 				width: 100%;
 				position: absolute;
@@ -166,6 +153,7 @@
 	</style>
 
 	<script>
+
 		function view(){
 			return {
 				W:document.documentElement.clientWidth || document.body.clientWidth
@@ -198,7 +186,6 @@
 					aClass.splice(i, 1);
 					obj.className = aClass.join(' ');
 				}
-
 			}
 		}
 		function addClass(obj, oClass) {
@@ -282,8 +269,7 @@
 				if( timer2 - timers <1000){
 					timer = requestAnimationFrame( animation );
 				}
-			}
-			
+			}		
 			function moveFn(ev){
 
 				clientX = ev.clientX;
@@ -291,8 +277,7 @@
 				cancelAnimationFrame( timer );
 				timer = requestAnimationFrame( animation );
 
-				var timers = new Date().valueOf();
-							
+				var timers = new Date().valueOf();						
 			}
 			function outFn() {
 				cancelAnimationFrame( timer );
@@ -301,7 +286,6 @@
 					aImg[i].removeAttribute("style");
 				}
 			}
-
 			oUl.onclick = function(ev){
 
 				ev = ev || event;
@@ -363,7 +347,6 @@
 					}
 				} 	
 			};
-
 			(function(){
 				try {
 					var audio = new Audio();
@@ -414,19 +397,16 @@
 						// console.log(colorNow);
 						this.style.background = color[colorNow];
 						this.parentNode.style.background = color[colorNow];
-					}
+					};
 				}
-
-				function int() {
-					audio.pause();
-					audio = null;
-					audio = new Audio;
-				}
-
 				btn[btn.length - 1].onclick = function() {
 					int();
 				};
-
+				function int() {
+					audio.pause();
+					audio = null;
+					audio = new Audio();
+				}
 				function play() {
 					listenEvent(audio, 'canplay', function(){
 						// console.log('play');
@@ -444,9 +424,9 @@
 
 					//调用音频解码器
 					analyser = (analyser || audioContext.createAnalyser());
-					console.log(analyser);
+					// console.log(analyser);
 					sourceNode = audioContext.createMediaElementSource(audio);
-					console.log(sourceNode);
+					// console.log(sourceNode);
 					audio.play();
 
 					sourceNode.connect(analyser);
@@ -463,6 +443,8 @@
 
 					/* 定义一个 Uint8Array 字节流去接收分析后的数据 */
 					data = new Uint8Array(analyser.frequencyBinCount);
+					// console.log(data);
+					// console.log(data.length);
 					//得到数组
 			        analyser.getByteFrequencyData(data);
 
@@ -481,19 +463,24 @@
 
 			    	//步长
 			    	var step = Math.round(arr.length / 8); 
+			    	console.log('step:'+step);
 			    	for( var i = 0; i < 7; i++ ){
 			    		num = arr[i * step];
+			    		console.log('num:'+num);
+			    		// console.log(aImg[i].offsetHeight);
 			    		k = (num) / aImg[i].offsetHeight * 100;
 						m = 100 - k;
 						n = (m-30)>0?(m-30):0;
 			    		aImg[i].style.cssText = "-webkit-transform:(0," + n + "%,0);transform:translate3d(0," + n +"%,0)";
 						if(i==0){
-							btnNow.style.webkitTransform = 'translateY(-50px) scale('+ (2-m/80) +','+ (2-m/80) +')';
+							// btnNow.style.background = 'rgb('+ num +','+ num +','+ num +')';
+							// nowbtn.style.webkitTransform = 'translateY('+ -m/2 +'px)';
+							btnNow.style.webkitTransform = 'scale('+ (2-m/80) +','+ (2-m/80) +')';
+							btnNow.style.transform = 'scale('+ (2-m/80) +','+ (2-m/80) +')';
 						};
 			    	}
 			    }
 			}());
-
 		};
 	</script>
 </head>

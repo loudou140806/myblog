@@ -3,6 +3,8 @@ layout: post
 tags: requestAnimationFrame html5 animation
 keys: requestAnimationFrame html5 animation
 description: 现今实现动画的方式有很多，css3的animation+keyframes transition jQuery中的animationAPI的，如今又多了一个requestAnimationFrame能够让动画看起来更流畅，你还可以在CANVAS上实现动画，或者用原生的setInterval()和setTimeout()来实现动画，只不过这需要每秒60帧以上才能让肉眼看起来流畅。
+title: HTML5运动函数requestAnimationFrame()
+---
 
 ##初识requestAnimationFrame
 
@@ -49,6 +51,6 @@ window.requestAnimationFrame(step);
 
 ###浏览器支持性
 
-<img src="images/2015-11-17/1.png" alt="requestAnimationFrame浏览器支持特性">
+<img src="images/work/2015-11-17/1.png" alt="requestAnimationFrame浏览器支持特性">
 
 浏览器的支持性还不错
