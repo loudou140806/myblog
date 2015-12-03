@@ -1,6 +1,7 @@
 ---
 layout: post
 keys: HTML5
+tags: HTML5
 title: HTML5中新增的标签和废除的标签
 ---
 ##新增的结构标签

@@ -1,6 +1,7 @@
 ---
 layout: post
 keys: SEO WEB 搜索引擎
+tags: SEO WEB 搜索引擎
 title: SEO在网页中的应用
 ---
 
