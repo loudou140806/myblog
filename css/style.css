@@ -489,10 +489,11 @@ a:hover {
     box-shadow: 0 0 3px rgba(0,178,179,0.16667);
 }
 .main-article code {
+    display: inline-block;
     max-width: 794px; 
     max-height: 200px;
     overflow: auto;
-    border: 1px dashed rgba(0,178,179,0.666);
+    border: none;
     border-radius: 3px 3px;
     line-height: inherit;
     vertical-align: baseline;
@@ -501,9 +502,6 @@ a:hover {
 }
 .main-article pre code span{
     background-color: rgba(212, 241, 242, 1);
-}
-.main-article pre code {
-    border: none;
 }
 .main-article ul {
     list-style-type: disc;

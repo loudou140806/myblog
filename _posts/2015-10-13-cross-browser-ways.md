@@ -1,5 +1,6 @@
 ---
 layout: post
+tags: EventUtil 
 title: EventUtil构造函数 以及一些跨浏览器方法
 ---
 
@@ -241,14 +242,14 @@ function getLocalStorange(){
 }
 {% endhighlight %}
 
-*###indexedDB
+* ###indexedDB
 
 {% highlight js %}
 var indexedDB = window.indexedDB || window.msIndexDB || windwo.mozIndexDB || window.webkitIndexedDB;
 var IDBKeyRange = window.IDBKeyRange ||window.webkitIDBKeyRange;
 {% endhighlight %}
 
-*###requestAnimationFrame
+* ###requestAnimationFrame
 {% highlight js %}
 window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || 
 window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
