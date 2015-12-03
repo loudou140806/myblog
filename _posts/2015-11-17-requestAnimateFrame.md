@@ -51,6 +51,6 @@ window.requestAnimationFrame(step);
 
 ###浏览器支持性
 
-<img src="images/work/2015-11-17/1.png" alt="requestAnimationFrame浏览器支持特性">
+<img src="../images/work/2015-11-17/1.png" alt="requestAnimationFrame浏览器支持特性">
 
 浏览器的支持性还不错

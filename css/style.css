@@ -97,7 +97,7 @@ a:hover {
     text-decoration: underline;
 }
 ::selection {
-    background: #F4F4F6;
+    background: #0088CC;
     text-shadow: none;
 }
 .fn-clear:after {
@@ -429,7 +429,7 @@ a:hover {
 .main-article-page {
     background: #fff;
 }
-.main-article-page .main-article-meta {
+.main-article-page {
     margin: 0px 0 30px 0;
 }
 .main-article-contant {
@@ -471,30 +471,27 @@ a:hover {
     margin: 0 auto;
     color:#0088cc;
 }
-.main-article h2 { font-size: 28px; margin-bottom: 10px; margin-top: 15px; font-weight: bold; }
-.main-article h3 { font-size: 24px; margin-bottom: 10px; margin-top: 15px; }
-.main-article h4 { font-size: 20px; margin-bottom: 10px; margin-top: 15px;}
-.main-article h5 { font-size: 18px; margin-bottom: 10px; margin-top: 15px;font-weight: bold; }
+.main-article h2,.main-article h3,.main-article h4,.main-article h5 {
+    margin-bottom: 10px; 
+    margin-top: 15px;
+}
+.main-article h2 { font-size: 28px; font-weight: bold; }
+.main-article h3 { font-size: 24px;  }
+.main-article h4 { font-size: 20px; }
+.main-article h5 { font-size: 18px; font-weight: bold; }
 .main-article pre {
-  /*  margin: 30px 0px 30px 0px;
-    padding: 13px 20px;
-    background-color: #F4F4F6;
-    clear: both;
-    color: #22272A;
-    overflow: auto;
-    font: 14px/22px Consolas, "Courier New", Courier, monospace;
-    -webkit-border-radius: 2px;
-       -moz-border-radius: 2px;
-            border-radius: 2px;*/
-      padding: 10px;
-      background-color: rgba(0,178,179,0.16667);
-      border-width: 1px 1px 1px 5px;
-      border-style: solid;
-      border-color: rgba(0,178,179,0.33333);
-      border-radius: 4px;
-      box-shadow: 0 0 3px rgba(0,178,179,0.16667);
+    padding: 10px;
+    background-color: rgba(0,178,179,0.16667);
+    border-width: 1px 1px 1px 5px;
+    border-style: solid;
+    border-color: rgba(0,178,179,0.33333);
+    border-radius: 4px;
+    box-shadow: 0 0 3px rgba(0,178,179,0.16667);
 }
 .main-article code {
+    max-width: 794px; 
+    max-height: 200px;
+    overflow: auto;
     border: 1px dashed rgba(0,178,179,0.666);
     border-radius: 3px 3px;
     line-height: inherit;
@@ -521,13 +518,6 @@ a:hover {
 .main-article em { font-style: italic; }
 .main-article strong { font-weight: bold; }
 .main-article blockquote {
-/*    padding: 20px 20px 0 20px;
-    margin: 20px 0 24px;
-    border-right: 3px solid #0088cc;
-    border-radius: 0 3px 3px 0;
-    text-align: right;
-    color: #8d8d8d;
-    font-style: italic;*/
     position: relative;
     margin: 15px 0px;
     background-color: rgba(0,179,0,0.16667);

@@ -22,7 +22,7 @@ title: HTML5中新增的标签和废除的标签
 	表示页面中导航链接的部分。
 - figure元素 
 	表示一段独立的流内容，一般表示文档主体流内容中的一个独立单元。使用figcaption元素为figure元素组添加标题。例如： 
-{% htghlight js %}
+{% highlight js %}
 <figure> 
 <figcaption>PRC</figcaption> 
 <p>The People's Republic of China was born in 1949</p> 
@@ -39,7 +39,7 @@ HTML4中常写作
 - video元素 
 	定义视频。像电影片段或其他视频流。例：<video src="movie.ogg" controls="controls">video元素</video> 
 	HTML4中写法： 
-{% htghlight js %}
+{% highlight js %}
 <object type="video/ogg" data="move.ogv"> 
   <param name ="src" value="movie.ogv"> 
 </object>
@@ -48,7 +48,7 @@ HTML4中常写作
 - audio元素 
 	定义音频。如音乐或其他音频流。例：<audio src ="someaudio.wav">audio元素</audio> 
 html4中写法： 
-{% htghlight js %}
+{% highlight js %}
 <object tyle="application/ogg" data="someaudio.wav"> 
   <param name ="src" value= "someaudio.wav"> 
 </object>
@@ -57,7 +57,7 @@ html4中写法：
 - embed元素 
 	用来嵌入内容(包括各种媒体)。格式可以是Midi、Wav、AIFF、AU、MP3,flash等。例：<embed src="flash.swf" /> 
 	HTML4中代码示例:
-{% htghlight js %}
+{% highlight js %}
 <object data="flash.swf" type="application/x-shockwave-flash"><object>
 {% endhighlight %}
 
@@ -82,7 +82,7 @@ html4中写法：
 	表示软换行。与br元素的区别：br元素表示此处必须换行；wbr表示浏览器窗口或父级元素足弓宽时（没必要换行时），不换行，而宽度不够时主动在此处换行。
 - canvas元素 
 	定义图形，比如图表和其他图像。<canvas> 元素只是图形容器（画布），必须使用脚本来绘制图形。 
-{% htghlight js %}
+{% highlight js %}
 <canvas id="myCanvas"></canvas><script type="text/javascript"> 
 var canvas=document.getElementById('myCanvas'); 
 var ctx=canvas.getContext('2d'); 
@@ -93,7 +93,7 @@ ctx.fillRect(0,0,80,100);
 
 - command元素——貌似没什么效果。是不是支持有问题 
 	表示命令按钮，比如单选按钮、复选框或按钮。只有当 command 元素位于 menu 元素内时，该元素才是可见的。否则不会显示这个元素，但是可以用它规定键盘快捷键。。 
-{% htghlight js %}
+{% highlight js %}
 <menu> 
 <command onclick="alert('Hello World')"> 
 Click Me!</command> 
@@ -105,7 +105,7 @@ Click Me!</command>
 
 - datalist标签 
 	定义选项列表。请与 input 元素配合使用该元素，来定义 input 可能的值。datalist 及其选项不会被显示出来，它仅仅是合法的输入值列表。使用 input 元素的 list 属性来绑定 datalist。 
-{% htghlight js %}
+{% highlight js %}
 <input id="myCar" list="cars" /> 
 <datalist id="cars"> 
   <option value="BMW"> 
@@ -119,7 +119,7 @@ Click Me!</command>
 
 - keygen标签 如何用? 
 	标签规定用于表单的密钥对生成器字段。当提交表单时，私钥存储在本地，公钥发送到服务器。
-{% htghlight js %}
+{% highlight js %}
 <form action="demo_keygen.asp" method="get"> 
 Username: <input type="text" name="usr_name" /> 
 Encryption: <keygen name="security" /> 
@@ -129,7 +129,7 @@ Encryption: <keygen name="security" />
 
 - output标签 
 	定义不同类型的输出，比如脚本的输出。 
-{% htghlight js %}
+{% highlight js %}
 <form action="form_action.asp" method="get" name="sumform"> 
 <output name="sum"></output> 
 </form>
@@ -138,7 +138,7 @@ Encryption: <keygen name="security" />
 	标签为媒介元素（比如 <video> 和 <audio>）定义媒介资源。
 - menu标签 
 定义菜单列表。当希望列出表单控件时使用该标签。注意与nav的区别，menu专门用于表单控件。 
-{% htghlight js %}
+{% highlight js %}
 <menu> 
 <li><input type="checkbox" />Red</li> 
 <li><input type="checkbox" />blue</li> 
