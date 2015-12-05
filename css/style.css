@@ -142,6 +142,9 @@ a:hover {
     opacity: 0;
     filter: alpha(opacity:0);
     background-image: url(../images/hdbg03.jpg);
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
 }
 .footwrap {
     background: #22272a;
@@ -153,9 +156,7 @@ a:hover {
     width: 100%;
     height: 260px;
     background-color: #fff;
-    background-size: cover;
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
+
 }
 #violet-header {
     width: 720px;
