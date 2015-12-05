@@ -484,11 +484,18 @@ a:hover {
     width: 100%;
     text-align: center;
 }
+.violet-title-wrap {
+    height: 48px;
+    position: relative;
+    width: 720px;
+    margin: 0 auto;
+}
 .violet-title .violet-title-item {
     width: 720px;
     font-size: 32px;
-    margin: 0 auto;
     color:#0088cc;
+    opacity: 0;
+    filter: alpha(opacity:0);
 }
 .main-article h2,.main-article h3,.main-article h4,.main-article h5 {
     margin-bottom: 10px; 

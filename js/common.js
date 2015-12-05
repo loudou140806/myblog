@@ -89,7 +89,7 @@ $(document).ready(function() {
         var $articleList = $('.violet-post');
         var $foot = $('.footwrap');
         var headH = $head.height();
-
+        var $title = $('.violet-title-item');
         // 第一个元素的marginLeft值
         var marL = parseInt($articleList.parent().outerWidth() - $articleList.outerWidth())/2;
 
@@ -131,6 +131,11 @@ $(document).ready(function() {
                 }).animate({
                 marginTop: 0,
                 opacity: 100   
+            },1200,"easeOutCubic");
+            $title.css({
+                "position" : "absolute"
+            }).animate({
+                opacity:100
             },1200,"easeOutCubic");
             $articleList.on({
                 mouseenter: function(){
