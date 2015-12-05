@@ -42,7 +42,8 @@ timezone:      null
 title: Frank
 subTitle: 临渊羡鱼，不如退而结网！
 description: 这是 Frank 的第一个博客，它是基于 Jekyll 搭建起来的。在这里，用来记录我想要记录的时刻。
-url: "http://loumingjie.cn/myblog"
+# url: "http://loumingjie.cn/myblog"
+url: ""
 feed: /atom.xml
 
 #菜单配置
@@ -66,8 +67,8 @@ headimg:
 
 #关注我
 follow:
-  # - class: fa-google-plus
-  #   url: http://www.zhanxin.info
+  - class: fa-google-plus
+    url: https://plus.google.com/103959331286474364604/posts?hl=zh-CN
   - class: fa-facebook
     url: https://www.facebook.com/?ref=tn_tnmn
   - class: fa-github
@@ -78,8 +79,8 @@ follow:
   #   url: http://www.zhanxin.info
   # - class: fa-pinterest
   #   url: http://www.zhanxin.info
-  # - class: fa-twitter
-  #   url: http://www.zhanxin.info
+  - class: fa-twitter
+    url: https://twitter.com/loudou140806
   # - class: fa-rss
   #   url: http://www.zhanxin.info
 

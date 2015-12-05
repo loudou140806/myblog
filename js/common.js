@@ -18,9 +18,11 @@ $(document).ready(function() {
             }
         },
         _scrollScreen: function() {
-            var that = this, topLink = $('#' + that.nodeName);
+            var that = this, 
+                topLink = $('#' + that.nodeName);
 
             if(jQuery(document).scrollTop() <= that.scrollHeight) {
+                topLink.fadeOut();
                 topLink.hide();
                 return true;
             }  else {
@@ -47,7 +49,8 @@ $(document).ready(function() {
 
         },
         run: function() {
-            var that = this, topLink = $('<a id="' + that.nodeName + '" href="#" class="toTop"><i class="fa fa-chevron-up"></i></a>');
+            var that = this, 
+                topLink = $('<a id="' + that.nodeName + '" href="#" class="toTop"><i class="fa fa-chevron-up"></i></a>');
             topLink.appendTo($('body'));
 
             topLink.css({
@@ -74,117 +77,105 @@ $(document).ready(function() {
                 that._scrollScreen();
             });
         }
-    }
+    };
     scrollTo.run();
 
-    var EventUtil = {
+    // 页面动画
+    (function init_animate() {
 
-        addHandler: function(element, type, handler){
-            if (element.addEventListener){
-                element.addEventListener(type, handler, false);
-            } else if (element.attachEvent){
-                element.attachEvent("on" + type, handler);
-            } else {
-                element["on" + type] = handler;
-            }
-        },
+        var showNum = 0;
+        var iNow = 0;
+        var $head = $('.headwrap');
+        var $articleList = $('.violet-post');
+        var $foot = $('.footwrap');
+        var headH = $head.height();
+
+        // 第一个元素的marginLeft值
+        var marL = parseInt($articleList.parent().outerWidth() - $articleList.outerWidth())/2;
+
+        $(window).on({
+            load: _init,
+            resize: _resize,
+            scroll: _scroll
+        });
         
-        getButton: function(event){
-            if (document.implementation.hasFeature("MouseEvents", "2.0")){
-                return event.button;
-            } else {
-                switch(event.button){
-                    case 0:
-                    case 1:
-                    case 3:
-                    case 5:
-                    case 7:
-                        return 0;
-                    case 2:
-                    case 6:
-                        return 2;
-                    case 4: return 1;
+        function _resize() {
+
+            marL = parseInt($articleList.parent().outerWidth() - $articleList.outerWidth())/2;
+            $articleList.each(function(i, v){
+
+                if(marL > 0) {
+                    $(v).animate({
+                        marginLeft: marL + 'px'
+                    });
+                }else{
+                    $(v).animate({
+                        marginLeft: 0
+                    });
                 }
-            }
-        },
-        
-        getCharCode: function(event){
-            if (typeof event.charCode == "number"){
-                return event.charCode;
-            } else {
-                return event.keyCode;
-            }
-        },
-        
-        //得到剪贴板内容
-        getClipboardText: function(event){
-            var clipboardData =  (event.clipboardData || window.clipboardData);
-            return clipboardData.getData("text");
-        },
-        
-        getEvent: function(event){
-            return event ? event : window.event;
-        },
-        
-        getRelatedTarget: function(event){
-            if (event.relatedTarget){
-                return event.relatedTarget;
-            } else if (event.toElement){
-                return event.toElement;
-            } else if (event.fromElement){
-                return event.fromElement;
-            } else {
-                return null;
-            }
-        
-        },
-        
-        getTarget: function(event){
-            return event.target || event.srcElement;
-        },
-        
-        getWheelDelta: function(event){
-            if (event.wheelDelta){
-                return (client.engine.opera && client.engine.opera < 9.5 ? -event.wheelDelta : event.wheelDelta);
-            } else {
-                return -event.detail * 40;
-            }
-        },
-        
-        preventDefault: function(event){
-            if (event.preventDefault){
-                event.preventDefault();
-            } else {
-                event.returnValue = false;
-            }
-        },
-
-        removeHandler: function(element, type, handler){
-            if (element.removeEventListener){
-                element.removeEventListener(type, handler, false);
-            } else if (element.detachEvent){
-                element.detachEvent("on" + type, handler);
-            } else {
-                element["on" + type] = null;
-            }
-        },
-        
-        //设置剪贴板内容
-        setClipboardText: function(event, value){
-            if (event.clipboardData){
-                event.clipboardData.setData("text/plain", value);//Chorme是text/plain
-            } else if (window.clipboardData){
-                window.clipboardData.setData("text", value);//IE是text
-            }
-        },
-        
-        stopPropagation: function(event){
-            if (event.stopPropagation){
-                event.stopPropagation();
-            } else {
-                event.cancelBubble = true;
-            }
+            });
         }
 
-    };
+        function _init() {
+            
+            $head.css({
+                "position" : "absolute",
+                "marginTop": - headH + 'px',
+            }).animate({
+                marginTop: 0,
+                opacity :100
+            },1200,"easeOutCubic");
+            $foot.css({
+                "position" : "absolute",
+                "marginTop": $(this).height() + 'px'
+                }).animate({
+                marginTop: 0,
+                opacity: 100   
+            },1200,"easeOutCubic");
+            $articleList.on({
+                mouseenter: function(){
+                    marL = parseInt($articleList.parent().outerWidth() - $articleList.outerWidth())/2;
+                    $(this).animate({
+                        marginLeft: marL>0?(marL - 30 + "px"):0
+                    },30,"easeOutCubic");
+                },mouseleave: function() {
+                    marL = parseInt($articleList.parent().outerWidth() - $articleList.outerWidth())/2;
+                    $(this).animate({
+                        marginLeft: marL>0?marL:0
+                    },30,"easeOutCubic");
+                }
+            });
+            loadArticle();
+        }
+
+        // 打开页面或者改变浏览器大小时改变violet-post布局
+        function _scroll() {
+
+            if(iNow < $articleList.length){
+
+                // post距顶端的高
+                var eleTop = $articleList.eq(iNow)[0].getBoundingClientRect().top + $(window).scrollTop();
+
+                // window高 + scrollTop
+                var windowTop = $(window).scrollTop() + $(window).height();
+
+                // 小于说明要加载
+                if(eleTop < windowTop) {
+                    $articleList.eq(iNow).animate({
+                        opacity: 100
+                    },400,'easeOutCubic');
+                    iNow ++;
+                    console.log(iNow);
+                }
+            }else if(iNow == $articleList.length){
+                $(window).off('scroll',_scroll);
+                iNow = 0;
+            }
+        }
+        function loadArticle() {
+            for(i = 0; i < $articleList.length; i++) {
+                _scroll();
+            }
+        }  
+    }());
 });

@@ -3,6 +3,7 @@ layout: post
 keys: SEO WEB 搜索引擎
 tags: SEO WEB 搜索引擎
 title: SEO在网页中的应用
+description: 首先介绍了注明的雅虎军规中的14条，然后介绍了SEO的相关知识点，包括：1、网页的标题2、描述标签、3、关键词标签、4、正文当中的关键词5、alt标签、6、精简代码、
 ---
 
 ##YAHOO军规

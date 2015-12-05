@@ -18,49 +18,54 @@
     <link rel="stylesheet" href="{{ site.url }}/css/style.css" type="text/css" />
     <link rel="stylesheet" href="{{ site.url }}/css/pygments.css" type="text/css" />
     <link rel="alternate" type="application/atom+xml" title="Recent Entries" href="{{ site.feed }}" />
-    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
-    <link href='http://fonts.googleapis.com/css?family=Spirax' rel='stylesheet' type='text/css'>
+    <link href="http://libs.useso.com/js/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.useso.com/css?family=Spirax' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.useso.com/css?family=Lato' rel='stylesheet' type='text/css'>
     <link rel="shortcut icon" href="{{ site.url }}/images/favicon.ico" type="image/x-icon" />
     <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 </head>
 <body id="violet">
     <div class="page-wrapper">
         <section class="head" id="violet-head">
-            <header class="header" id="violet-header">
-                <h1 class="logo"><a href="{{ site.url }}">{{ site.title }}</a></h1>
-                <h2 class="subtitle">{{ site.subTitle }}</h2>
-            </header>
-            <nav class="nav" id="violet-nav">
-                <ul class="nav-list">
-                    {% for link in site.nav %}
-                    {% assign active = nil %}
-                    {% if page.url == link.url%}
-                      {% assign active = 'nav-item-active' %}
-                    {% endif %}
-                    <li class="nav-item {{ active }}">
-                        <a href="{{ link.url }}">
-                            {{ link.text }}
-                        </a>
-                        {{ indicator }}
-                    </li>
-                    {% endfor %}
-                    {% for link in site.follow %}
-                    <a class="follow" href="{{ link.url }}" target="_blank"><i class="fa {{ link.class }}"></i></a>
-                    {% endfor %}
-                </ul>
-            </nav>
+            <div class="headwrap">
+                <header class="header" id="violet-header">
+                    <h1 class="logo"><a href="{{ site.url }}">{{ site.title }}</a></h1>
+                    <h2 class="subtitle">{{ site.subTitle }}</h2>
+                </header>
+                <nav class="nav" id="violet-nav">
+                    <ul class="nav-list">
+                        {% for link in site.nav %}
+                        {% assign active = nil %}
+                        {% if page.url == link.url%}
+                          {% assign active = 'nav-item-active' %}
+                        {% endif %}
+                        <li class="nav-item {{ active }}">
+                            <a href="{{ link.url }}">
+                                {{ link.text }}
+                            </a>
+                            {{ indicator }}
+                        </li>
+                        {% endfor %}
+                        {% for link in site.follow %}
+                        <a class="follow" href="{{ link.url }}" target="_blank"><i class="fa {{ link.class }}"></i></a>
+                        {% endfor %}
+                    </ul>
+                </nav>
+            </div>
         </section>
         <section class="main" id="violet-main">
             {{ content }}
         </section>
         <footer class="foot" id="violet-foot">
-            <div class="footer fn-clear">
-                <h1 class="logo">{{ site.title }}</h1>
-            </div>
-            <div class="copyright">
-                <div class="copyright-cnt fn-clear">
-                   
-                    <p class="text">© 2013 Violet Jekyll Theme.Design by <a href="http://www.zhanxin.info">zhanxin.lin</a></p>
+            <div class="footwrap">
+                <div class="footer fn-clear">
+                    <h1 class="logo">{{ site.title }}</h1>
+                </div>
+                <div class="copyright">
+                    <div class="copyright-cnt fn-clear">
+                       
+                        <p class="text">© 2013 Violet Jekyll Theme.Design by <a href="http://www.zhanxin.info">zhanxin.lin</a></p>
+                    </div>
                 </div>
             </div>
         </footer>
@@ -68,6 +73,7 @@
 
     <script type="text/javascript" src="{{ site.url }}/js/jquery-1.8.3.js"></script>
     <script type="text/javascript" src="{{ site.url }}/js/jquery-scrollTo.js"></script>
+    <script type="text/javascript" src="{{ site.url }}/js/jquery.easing.1.3.js"></script>
     <script type="text/javascript" src="{{ site.url }}/js/common.js"></script>
     <script type="text/javascript" src="{{ site.url }}/js/jquery.lazyload.min.js"></script>
     <script type="text/javascript" defer="defer">
