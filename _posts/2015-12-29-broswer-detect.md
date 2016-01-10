@@ -6,7 +6,10 @@ keys: broswer-detect 特性检测
 tags: broswer-detect 特性检测
 ---
 
+浏览器嗅探解决方案包括IE, Chorme, Safari, Firefox, IE11+, WerXin, Other Browsers
+
 {% highlight js %}
+
 // start browser detect
     var nVer = navigator.appVersion,
             nAgt = navigator.userAgent,
@@ -158,4 +161,5 @@ tags: broswer-detect 特性检测
 
     //输出对象
     console.log(params);
+
 {% endhighlight %}
