@@ -5,31 +5,6 @@ tags: IE6 IE7 firefox safri chrome
 keys: IE6 IE7 firefox safri chrome
 description: css常见兼容性问题（IE6,7）,PNG兼容性问题（IE6，7）
 ---
-**Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
-
-- [CSS常见问题](#)
-	- [H5标签兼容(IE6,7)](#)
-	- [元素浮动之后,能设置宽度的话就给元素加宽度.如果需要宽度是内容撑开,就给它里边的块元素加上浮动(IE6)](#)
-	- [第一块元素浮动,第二块元素加margin值等于第一块元素,在IE6下会有间隙问题(IE6)](#)
-	- [IE6下子元素超出父级宽高，会把父级的宽高撑开(IE6)](#)
-	- [p 包含块元素嵌套规则(p,h标签,td标签不能再包含块元素否则会生成新标签占位置)](#)
-	- [margin兼容性问题(margin-top传递，上下margin叠压)](#)
-	- [display:inline-block不支持(IE6)](#)
-	- [IE6 最小高度问题(IE6)](#)
-	- [IE6双边距(IE6,7)](#)
-	- [li里元素都浮动 li 在IE6 7  下方会产生4px间隙问题(IE6,7)](#)
-	- [浮动元素之间注释，导致多复制一个文字问题](#)
-	- [IE6下绝对定位元素父级宽高是奇数,绝对定位元素的right和bottom值会有1px的偏差(IE6)](#)
-	- [IE6下绝对定位元素和浮动元素并列绝对定位元素消失(IE6)](#)
-	- [IE6 下input的空隙](#)
-	- [IE6 下 输入类型表单控件背景问题（会随着输入的文字左移）(IE6)](#)
-- [CSS hack](#)
-	- [IE6不支持png24 图片。](#)
-		- [解决方案：JS插件(问题:不能处理body之上png24)](#)
-		- [原生滤镜](#)
-	- [IE6下PNG图片的灰色背景](#)
-	- [默认 < 类型 < class < id < style(行间) < !important](#)
-	
 ##CSS常见问题
 
 ###H5标签兼容(IE6,7)
@@ -754,3 +729,6 @@ DD_belatedPNG.fix('*');
 {% highlight js %}
 
 {% endhighlight %}
+
+innerText只支持IE,FireFox不支持
+document.createElement(

@@ -223,11 +223,11 @@ a:hover {
     text-align: center;
     background: rgba(255,255,255,0.1);
     border-radius: 3px 3px;
-    -webkit-transition: background .6s ease-in-out;
-    -moz-transition: background .6s ease-in-out;
-    -ms-transition: background .6s ease-in-out;
-    -o-transition: background .6s ease-in-out;
-    transition: background .6s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    -moz-transition: all .4s ease-in-out;
+    -ms-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
 }
 .nav-list .follow:hover {
     border-radius: 16px;

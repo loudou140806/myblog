@@ -140,6 +140,7 @@ $(document).ready(function() {
             $articleList.on({
                 mouseenter: function(){
                     marL = parseInt($articleList.parent().outerWidth() - $articleList.outerWidth())/2;
+                    console.log('marL' + marL );
                     $(this).animate({
                         marginLeft: marL>0?(marL - 30 + "px"):0
                     },30,"easeOutCubic");
@@ -170,7 +171,6 @@ $(document).ready(function() {
                         opacity: 100
                     },400,'easeOutCubic');
                     iNow ++;
-                    console.log(iNow);
                 }
             }else if(iNow == $articleList.length){
                 $(window).off('scroll',_scroll);

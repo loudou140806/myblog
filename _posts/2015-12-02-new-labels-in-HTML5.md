@@ -1,7 +1,7 @@
 ---
 layout: post
-keys: HTML5
-tags: HTML5
+keys: HTML5 标签
+tags: HTML5 标签
 description: HTML5一词应该说已经成了当下前端界最炙手可热的名词，无论是PC端还是移动端都大放异彩，这篇文章主要记录一下HTML5新增的标签，以便自己以后查阅。
 title: HTML5中新增的标签和废除的标签
 ---
