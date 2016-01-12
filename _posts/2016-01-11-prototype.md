@@ -62,9 +62,9 @@ console.log(fn instanceof Object);  // true
 ###prototype属性
 
 前面的出的结论，函数也是一个对象，当然这在函数自身也是有迹可循的，比如创建一个函数SuperType之后，函数默认就有了一个prototype属性(当然也是一个对象！)。
-<img src="../images/post/2016-1-11/1.png" alt="SuperType和prototype的关系">
+<img data-original="{{site.url}}/images/post/2016-1-11/1.png" alt="SuperType和prototype的关系">
 左侧是一个SuperType函数，右侧是他的原型prototype属性，prototype属性默认只有一个constructor属性，指向创造它的构造函数。前面说到原型这么厉害，怎么只有一个constructor属性？当然这里只是举个栗子~下面看看这位Object大哥~
-<img src="../images/post/2016-1-11/2.png" alt="Object和它的原型">
+<img data-original="{{site.url}}/images/post/2016-1-11/2.png" alt="Object和它的原型">
 Object对象的原型方法就多了，而且这些好像我们都经常使用哦有木有？
 
 下面来看个例子：
@@ -154,10 +154,42 @@ console.log(
 
 上述代码可表示为如下的关系：
 
-<img src="../images/post/2016-1-11/3.png" alt="构造函数和constructor遗迹prototype的关系">
+<img data-original="{{site.url}}/images/post/2016-1-11/3.png" alt="构造函数和constructor遗迹prototype的关系">
 
 上述图示可以看出，每一个object都有一个prototype. 构造函数Foo也拥有自己的__proto__, 也就是Function.prototype, 而Function.prototype的__proto__指向了Object.prototype. 重申一遍，Foo.prototype只是一个显式的属性，也就是b和c的__proto__属性。而最后的Object。prototype对象的隐式原型指向null，就如同前面所说每一个对象都有原型，除了Object，是不是很直观？
 
 ###原型链
 
-从上面那张图我们看到从b->Foo.prototype->Object.prototype有一条链接。从c->Foo.prototype->Object.prototype又是一条链接。还有从Foo->Function.prototype->Object.prototype。没错这就是我们所说的原型链，每个对象和对象的原型属性都有一个隐式原型。实例的隐式原型指向构造函数的原型属性，也就是b和c指向Foo.prototype，构造函数指向上一级构造函数的原型属性，最终指向Object.prototype也就是Foo指向Function.prototype再指向Object.prototype，构造函数的原型属性指向上一级构造函数的prototype，若上一级为Function，则指向Object.prototype.
+原型链，本来我以为是通过prototype属性链接在一起的，后来我发现不是的，原型链是基于__proto__属性链接在一起的。
+
+{% highlight js %}
+function Foo(){};
+var foo = new Foo();
+console.log(foo.__proto__ === Foo.prototype);// true
+console.log(Foo.prototype.__proto__ === Object.prototype); //true
+console.log(Foo.__proto__ === Function.prototype);// true
+console.log(Function._proto__ === Function.prototype);// true
+console.log(Object.__proto__ === Function.prototype);// true
+{% endhighlight %}
+
+还是通过这个最简单的例子，所有的构造器都来自于Function.prototype，甚至包括根构造器Object及Function自身。所有构造器都继承了Function.prototype的属性及方法。
+
+{% highlight js %}
+console.log(Object.__proto__);// function() {}
+
+console.log(Function.__proto__);// function() {}
+
+console.log(Function.__proto__ === new Object());// false
+
+console.log(Function.__proto__ === Function.prototype);// true
+
+console.log(Function.prototype);// function() {}
+
+console.log(Function.prototype.constructor);// Function() { [native code] }
+
+console.log(Function.prototype.__proto__);// Object {}
+
+console.log(Function.prototype.__proto__ === Object.prototype);// true
+{% endhighlight %}
+
+最后本人水平有限，毕竟也是学习笔记，有错误的地方望批评指正！<a href="loudou140806@gmail.com">loudou140806@gmail.com</a>
