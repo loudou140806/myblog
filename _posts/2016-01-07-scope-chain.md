@@ -1,9 +1,9 @@
 ---
 layout: post
-title: 理解作用域和作用域链
+title: 作用域和作用域链学习笔记
 description: 对于任何程序来说，都有其执行的作用域，所谓的作用域，即函数或者变量的有效范围。作用域代表了函数的执行环境以及生命周期而作用域链则是函数对象内部[[scope]]属性中包含的函数被创建的作用域中对象的集合。该属性在ECMA-262第三版中定义。
-keys: scope-chain
-tags: scope-chain
+keys: scope-chain 作用域 作用域链
+tags: scope-chain 作用域 作用域链
 ---
 
 ##作用域
@@ -205,3 +205,5 @@ func调用时，作用域链为
 	window call object
 }]
 {% endhighlight %}
+
+好了，现在你清楚作用域和作用域链概念了么，如果不清楚欢迎来信，loudou140806@gmail.com。
