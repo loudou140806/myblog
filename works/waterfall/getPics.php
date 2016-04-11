@@ -16,5 +16,3 @@ $content = file_get_contents($url);
 $content = iconv('gbk', 'utf-8', $content);
 
 echo $content;
-
-?>
