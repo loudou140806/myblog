@@ -22,7 +22,7 @@ window.onload=function(){
 	getList();
 
 	function getList(){
-		ajax('get','getPics.php','cPage=' + iPage,function(data){
+		ajax('get', 'getPics.php', 'cPage=' + iPage, function(data){
 
 				var data=JSON.parse(data);
 
