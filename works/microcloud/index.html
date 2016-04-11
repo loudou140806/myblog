@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>微云，全能收藏 无处不在</title>
+	<link rel="shortcut icon" href="img/icon.ico.gif">
+	<style>
+		*{margin: 0;padding: 0;}
+		html, body{ margin:0; height:100%; }
+		body{background:#c8c8c8;width:100%;height:100%;margin:0;overflow-x:hidden;}
+		.header{width: 100%;height: 80px;overflow: hidden;position: relative;z-index: 20;}
+		.header .top{width: 100%;height: 80px;filter:alpha(opacity:90);opacity: 0.9;z-index: -1;background: white;position: absolute;left: 0;top: 0px;}
+		.header .nav{width: 960px;height:80px;margin: 0 auto;}
+		.header .nav .logo{width: 365px;height: 80px;float: left;}
+		.header .nav .logo a{width: 365px;height: 47px;margin-top: 15px;display: block;}
+		.header .nav .list{float: left;margin-left: 185px;height: 80px;}
+		.header .nav .list ul{list-style: none;overflow: hidden;}
+		.header .nav .list ul .current{border-bottom: 4px solid blue;padding-bottom: 0;}
+		.header .nav .list ul li{float: left;width: 80px;height: 76px;padding-bottom:4px;line-height: 80px;text-align: center;}
+		.header .nav .list ul li:nth-of-type(3){float: left;width:116px;height: 76px;padding-bottom:4px;line-height: 80px;text-align: center;}
+		.header .nav .list ul li a{text-decoration: none;color: #8D8D8D;font-size: "微软雅黑";font-weight: 700;}
+		.header .nav .list ul li a:hover{color:black;}
+		.header .nav .link{width: 134px;height: 80px;float: left;position: relative;}
+		.header .nav .link .btn2{margin-top: 20px;margin-left: 24px;width: 110px;height: 40px;margin-top: 20px;position: absolute;}
+		.header .nav .link a{text-decoration: none;color: white;position: absolute;top: 50%;margin-top: -10px;margin-left: 40px;}
+		/*.clearfloat{clear: both;width: 0;height: 0;overflow: hidden;}
+		#head{width: 100%;left: 0;top: 0;position: relative;height: 80px;font-family: "Microsofe Yahei";color: white;z-index: 22;}
+		#head .top{width: 100%;height: 80px;background-color:white;filter:alpha(opacity:80);opacity:0.8;position: absolute;top: 0;left: 0;z-index: -1; }
+		#head .nav{width: 960px;height: 80px;margin: 0 auto;}
+		.logo{float:left;margin-top: 15px;display: block;width: 365px;height: 47px;}
+		.list{float: left;padding-left: 200px;}
+		.list a{color: #718495; text-decoration: none;}
+		.list a:hover{color:black; text-decoration: none;}
+		.list li{list-style: none;float: left;width: 80px;height: 76px;line-height: 80px;text-align: center;padding-bottom: 4px;}
+		.list li.current{border-bottom: 4px solid blue;padding-bottom: 0;}
+		.link{float: left;margin: 20px 0 0 45px;background-image: url(img/btn.png);width: 110px; height: 40px;border-radius: 3px;}
+		.link a{width: 90px;height: 40px;display: inline-block;text-align: center;text-decoration: none;line-height: 40px;color: white;}*//*color: white;}
+		.list li .current{font-weight:700;color:#000;border-bottom:4px solid #3091f2;padding-bottom:0;}
+		/*导航结束*/
+		
+		/*banner开始*/
+		span{display: block;position: absolute;height: 680px;width: 100%}
+		#banner{position: relative;margin-top: -80px;height: 680px;}
+		#banner .banner_pic{position: absolute;width: 1600px;height: 680px;left: 50%;margin-left: -800px;top: 0;}
+		.banner_pic span{position: absolute;left: 0;top: 0;opacity: 0;}
+		/*.banner_pic .on_pic{opacity: 0;}*/
+
+		.info{position: absolute;left: 50%;top: 50%;margin-top: -115px;}
+		.info a{text-decoration: none;font-size: 30px;color: #4299F1;text-align: right;font-weight: 8px;font-family: "微软雅黑";position: absolute;left: 65%;top: 100%;z-index: 2;}
+		
+		#btn{margin: 0 auto;width: 500px;height: 18px;}
+		.btn{position: absolute;width: 180px; height: 18px;top: 94%;left: 42%}
+		.btn li{list-style: none;float: left;width: 18px;height: 18px;margin: 0 9px 0 9px;cursor: pointer;background:url(img/i_dot.32.png)}
+		.btn li.on{background-image:url(img/i_dot_hover.32.png)}
+		/*.off{background-image:url(img/i_dot.32.png)}*/
+		/*banner结束*/
+
+		/*第三部分开始*/
+		#third{width: 100%;height: 300px;background: white;margin: 0px auto;}
+		.inner{margin: 0px auto;width: 990px;}
+		.inner div{float:left;padding-right:30px;padding-top:35px;width: 300px;height: 230px;overflow: hidden;}
+		.wenzi{list-style: none;}
+		.wenzi li{height: 57px;width: 300px;margin:0 0 3px 0;background: #F2F2F2;font-family: "微软雅黑";color:#4C4C4C;font-size: 14px;position: relative;z-index: 3;cursor: pointer;}
+		.wenzi li p{padding-top: 8px;padding-left: 10px;}
+		.wenzi li span{padding-left: 10px;}
+		.wenzi li i{background-image: url(img/arrow.png);width: 5px;height: 9px;position: absolute;right: 30px;}
+		.wenzi li:hover{background: #EDEDED;}
+		/*第三部分结束*/
+
+		/*footer开始*/
+		#footer{width: 100%;height: 120px;background: #E6E6E6;position: relative;}
+		.footer_main{width: 800px;margin: 0 auto;position: relative;}
+		.footer_pic{top: 35px;left: 0;position: absolute;}
+		.footer_wenzi{width:700px;color:#999;padding:45px 0 0 130px;}
+		.footer_wenzi a{text-decoration: none;color:#999;}
+		.footer_wenzi a:hover{text-decoration: underline;}
+		/*footer结束*/
+	</style>
+	<script src="js/move2.js"></script>
+	<script type="text/javascript">
+	window.onload=function(){
+
+		var oBtn=document.getElementById('btn');
+		var aLi=oBtn.getElementsByTagName('li');
+		var oPic=document.getElementById('banner');
+		var oBanner_pic=getByClass(oPic,'banner_pic')[0];
+		var oImg=oBanner_pic.getElementsByTagName('span');
+		var index=0;
+		var timer=null;
+
+		//自动切换图片
+		timer=setInterval(tab,3000);
+		//移上去停止切换
+		oPic.onmouseover=function(){
+			clearInterval(timer);
+		};
+		//切换图片
+		function tab(){
+			if(index==aLi.length-1){
+					index=0;
+				}else{
+					index++;
+				}
+			for(var i=0;i<aLi.length;i++){
+					aLi[i].className='';
+					startMove(oImg[i],{opacity:0});
+				}
+				aLi[index].className='on';
+
+				startMove(oImg[index],{opacity:100});
+	
+		}
+
+		//移出重新开始
+		oPic.onmouseout=function(){
+			timer=setInterval(tab,3000);	
+			
+		};
+
+		//按钮切换		
+		for(var i=0;i<aLi.length;i++){
+			aLi[i].id=i;
+			aLi[i].onclick=function(){
+				for(var j=0;j<aLi.length;j++){
+					aLi[j].className='';
+					startMove(oImg[j],{opacity:0});
+				}
+					this.className='on';
+					index=this.id;
+					oImg[this.id].style.display='block';
+					startMove(oImg[this.id],{opacity:100});	
+			};
+		}
+
+		function getByClass(oPar,sClass){
+			var aEle=(oPar||document).getElementsByTagName('*');	
+			var re=new RegExp('\\b'+sClass+'\\b','i');
+			var aRes=[];
+			for(var i=0;i<aEle.length;i++){
+				if(re.test(aEle[i].className)){
+					aRes.push(aEle[i]);
+				}
+			}
+			return aRes;
+		}
+	};
+	</script>
+</head>
+<body>
+	<div id="main">
+		<!-- <div id="head">
+			<div class="top"></div>
+			<div class="nav">
+				<a href="http://www.baidu.com"><img class="logo" src="img/mini_logo.png" alt=""></a>
+				<ul class="list">
+					<li class="current"><a href="">首页</a></li>
+					<li><a href="xiazai.html">下载</a></li>
+					<li><a href="">功能介绍</a></li>
+				</ul>
+				<div class="link">
+					<a href="http://www.baidu.com">网页版</a>
+				</div>
+				<div class="clearfloat"></div>
+			</div>
+		</div> -->
+		<div class="header">
+			<div class="top"></div>
+			<div class="nav">
+				<div class="logo">
+					<a href="http://www.weiyun.com/index.html?WYTAG=weiyun.portal.index"><img src="img/mini_logo.png" alt=""></a>
+				</div>
+				<div class="list">
+					<ul>
+						<li class="current"><a href="shouye.html">首页</a></li>
+						<li><a href="xiazai.html">下载</a></li>
+						<li><a href="gongneng.html">功能介绍</a></li>
+					</ul>
+				</div>
+				<div class="link">
+					<div class="btn2"><img src="img/btn.png" alt=""></div>
+					<a href="http://www.baidu.com">网页版</a>
+				</div>
+			</div>
+		</div>
+		<div id="banner">
+			<div class="banner_pic">
+				<span style="display:block;filter:alpha(opacity=100); opacity:1;"><div class="on_pic" ><img src="img/banner1.jpg" alt=""><div class="info"><img src="img/txt1.png" alt=""><a href="http://www.baidu.com"><br>马上下载></a></div></div></span>
+				<span><div class="pic" ><img src="img/banner2.jpg" alt=""><div class="info"><img src="img/txt1.png" alt=""><a href="http://www.baidu.com"><br>马上下载></a></div></div></span>
+				<span><div class="pic" ><img src="img/banner3.jpg" alt=""><div class="info"><img src="img/txt1.png" alt=""><a href="http://www.baidu.com"><br>马上下载></a></div></div></span>
+				<span><div class="pic" ><img src="img/banner4.jpg" alt=""><div class="info"><img src="img/txt1.png" alt=""><a href="http://www.baidu.com"><br>马上下载></a></div></div></span>
+				<span><div class="pic" ><img src="img/banner5.jpg" alt=""></div></span>
+			</div>
+			<div id="btn">
+				<ul class="btn">
+					<li class="on"><!-- <img src="img/i_dot_hover.32.png" alt=""> --></li>
+					<li><!-- <img src="img/i_dot.32.png" alt=""> --></li>
+					<li><!-- <img src="img/i_dot.32.png" alt=""> --></li>
+					<li><!-- <img src="img/i_dot.32.png" alt=""> --></li>
+					<li><!-- <img src="img/i_dot.32.png" alt=""> --></li>
+					<div class="clearfloat"></div>
+				</ul>
+			</div>
+		</div>
+		<div id="third">
+			<div class="inner">
+				<div class="10t">
+					<a href="http://www.baidu.com" >
+						<img src="img/pic_10t.png" alt="">
+					</a>
+				</div>
+				<div class="beginner">
+					<a href="http://www.baidu.com" >
+						<img src="img/pic_beginner.png" alt="">
+					</a>
+				</div>
+				<div class="wenzi">
+					<ul>
+						<li>
+							<p>腾讯微云用户突破3亿</p>
+							<span>2015-03-30&nbsp20：29</span>
+							<i></i>
+						</li>
+						<li>
+							<p>微云2.0版全面升级&nbsp开启全能收藏时代</p>
+							<span>2015-03-30&nbsp20：29</span>
+							<i></i>
+						</li>
+						<li>
+							<p>2014年个人云将发挥更大的功能</p>
+							<span>2015-03-30&nbsp20：29</span>
+							<i></i>
+						</li>
+						<li>
+							<p>叫你如何玩转微云2.0</p>
+							<span>2015-03-30&nbsp20：29</span>
+							<i></i>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div id="footer">
+			<div class="footer_main">
+				<div class="footer_pic">
+					<img src="img/logo2.png" alt="">
+				</div>
+				<div class="footer_wenzi">
+					<p>
+						<a href="">关于腾讯</a>
+						|
+						<a href="">服务条款</a>
+						|
+						<a href="">客服中心</a>
+						|
+						<a href="">粤B2-20090059-86号</a>
+					</p>
+					<p>Copyright © 1998 - 2014 Tencent. All Rights Reserved. 腾讯公司 版权所有</p>
+				</div>
+				<div class="clearfloat"></div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

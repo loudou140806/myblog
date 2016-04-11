@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>功能介绍</title>
+<link rel="shortcut icon" href="img/icon.ico.gif">
+<style>
+*{margin:0;padding:0;}
+body{background:#F2F2F2;width:100%;height:100%;margin:0;overflow-x:hidden;}
+#main{width: 100%;min-height: 1000px;}
+.header{width: 100%;height: 80px;overflow: hidden;position: relative;border-bottom: 1px solid gray;}
+.header .top{width: 100%;height: 80px;filter:alpha(opacity:90);opacity: 0.9;z-index: -1;background: white;position: absolute;left: 0;top: 0px;}
+.header .nav{width: 960px;height:80px;margin: 0 auto;}
+.header .nav .logo{width: 365px;height: 80px;float: left;}
+.header .nav .logo a{width: 365px;height: 47px;margin-top: 15px;display: block;}
+.header .nav .list{float: left;margin-left: 185px;height: 80px;}
+.header .nav .list ul{list-style: none;overflow: hidden;}
+.header .nav .list ul .current{border-bottom: 4px solid blue;padding-bottom: 0;}
+.header .nav .list ul .current a{color: black;font-weight: bolder;}
+.header .nav .list ul li{float: left;width: 80px;height: 76px;padding-bottom:4px;line-height: 80px;text-align: center;}
+.header .nav .list ul li:nth-of-type(3){float: left;width:116px;height: 76px;line-height: 80px;text-align: center;}
+.header .nav .list ul li a{text-decoration: none;color: #8D8D8D;font-size: "微软雅黑";font-weight: 700;}
+.header .nav .list ul li a:hover{color:black;}
+.header .nav .link{width: 134px;height: 80px;float: left;position: relative;}
+.header .nav .link .btn{margin-top: 20px;margin-left: 24px;width: 110px;height: 40px;margin-top: 20px;position: absolute;}
+.header .nav .link a{text-decoration: none;color: white;position: absolute;top: 50%;margin-top: -10px;margin-left: 40px;}
+/*导航结束*/
+
+/*content开始*/
+.content{width: 100%;min-height: 100px;position: relative;margin-top: 30px;}
+.content .vedio{width: 960px;height: 540px;border: 1px solid black;margin: 0 auto;}
+.content .vedio a{display: block;}
+
+.content .realcontent{width: 860px;background: white;margin: 0 auto;margin-top: 30px;padding: 50px;}
+.content .realcontent .ico{width: 770px;height: 150px;border-bottom: 1px solid #cccccc;}
+.content .realcontent .inner_nav li{float: left;width: 70px;height: 132px;margin-right: 70px;list-style: none;background: url(img/function-icons.png) no-repeat;position: relative;left:0;top:0;transition:0.3s;}
+.content .realcontent .inner_nav li:hover{ top:-10px;}
+.content .realcontent .inner_nav li a{width: 70px;height: 132px;display: block;}
+.content .realcontent .inner_nav ul {margin: 0 auto;}
+.content .realcontent .inner_nav ul .ico-1{background-position: 0px 0px}
+.content .realcontent .inner_nav ul .ico-2{background-position: -122px 0px}
+.content .realcontent .inner_nav ul .ico-3{background-position: -243px 0px}
+.content .realcontent .inner_nav ul .ico-4{background-position: -365px 0px}
+.content .realcontent .inner_nav ul .ico-5{background-position: -487px 0px}
+.content .realcontent .inner_nav ul .active{margin-right: 0;background-position: -608px 0px;}
+/*content结束*/
+
+#realcontent .function{}
+#realcontent .function_1,#realcontent .function_2,#realcontent .function_3,#realcontent .function_4,#realcontent .function_5,#realcontent .function_6{height:350px; border-bottom:1px solid #e6e6e6; position:relative;}
+#realcontent .text { position:absolute;top:0; width:390px; margin-top:134px;}
+#realcontent .text h3{font-size:24px; font-weight:400; line-height:32px; }/*居然用这种方式调节粗细*/
+#realcontent .text p{ color:#666666; line-height:24px;} /*怎么测量行高*/
+#realcontent .pic{position:absolute; bottom:0;}
+/*end样式合并*/
+
+#realcontent .function_1 .text,#realcontent .function_3 .text,#realcontent .function_5 .text{ left:0;}
+#realcontent .function_1 .pic,#realcontent .function_3 .pic,#realcontent .function_5 .pic { right:0;}
+
+#realcontent .function_2 .text,#realcontent .function_4 .text,#realcontent .function_6 .text{ right:0;}
+#realcontent .function_2 .pic,#realcontent .function_4 .pic,#realcontent .function_6 .pic{ left:0;}
+
+/*footer开始*/
+#footer{width: 100%;height: 120px;background: #E6E6E6;position: relative;}
+.footer_main{width: 800px;margin: 0 auto;position: relative;}
+.footer_pic{top: 35px;left: 0;position: absolute;}
+.footer_wenzi{width:700px;color:#999;padding:45px 0 0 130px;}
+.footer_wenzi a{text-decoration: none;color:#999;}
+.footer_wenzi a:hover{text-decoration: underline;}
+/*footer结束*/
+
+
+	</style>
+	<!-- <script>
+	window.onload=function(){
+		var oRealContent=document.getElementById('realcontent');
+		var aLi=oRealContent.getElementsByTagName('li');
+
+		for(var i=0;i<aLi.length;i++){
+			aLi[i].index=i;
+			aLi[i].style.background='url(img/function-icons.png) -'+aLi[i].index*122+'px '+0+'px no-repeat';
+		}
+	}
+	</script> --><!-- 因为图片问题不能用这种方法 -->
+</head>
+<body>
+	<div class="main">
+		<div class="header">
+			<div class="top"></div>
+			<div class="nav">
+				<div class="logo">
+					<a href="http://www.weiyun.com/index.html?WYTAG=weiyun.portal.index"><img src="img/logo.png" alt=""></a>
+				</div>
+				<div class="list">
+					<ul>
+						<li><a href="index.html">首页</a></li>
+						<li><a href="xiazai.html">下载</a></li>
+						<li class="current"><a href="gongneng.html">功能介绍</a></li>
+					</ul>
+				</div>
+				<div class="link">
+					<div class="btn"><img src="img/btn.png" alt=""></div>
+					<a href="http://www.baidu.com">网页版</a>
+				</div>
+			</div>
+		</div>
+		<div class="content">
+			<div class="vedio">
+				<a href="http://www.baidu.com">
+					<img src="img/video.jpg" alt="">
+				</a>
+			</div>
+			<div class="realcontent" id="realcontent">
+				<div class="inner_nav">
+					<ul class="ico">
+						<li class="ico-1"><a href=""></a></li>
+						<li class="ico-2"><a href=""></a></li>
+						<li class="ico-3"><a href=""></a></li>
+						<li class="ico-4"><a href=""></a></li>
+						<li class="ico-5"><a href=""></a></li>
+						<li class="active"><a href=""></a></li>
+					</ul>
+				</div>
+				<div class="function_1">
+					<div class="text">
+						<h3>相册备份</h3>
+						<p>一键备份手机中的所有照片，WiFi环境下后台自动备份。可以备份5000万张手机照片，手机备份后其他终端随时浏览、分享、管理自己的照片。</p>
+					</div>
+					<div class="pic"><img src="img/function1.jpg" alt="相册备份"></div>						
+				</div>
+				<div class="function_2"> 
+					<div class="text">
+						<h3>云笔记</h3>
+						<p>帮助收集和整理各种会议记录、日程安排、生活备忘、讲课笔记、地址电话等，保存的笔记可以多种设备跨平台阅读和分享。</p>
+					</div>
+					<div class="pic"><img src="img/function2.jpg" alt="云笔记"></div>									
+				</div>
+				<div class="function_3">
+					<div class="text">
+						<h3>文件分类管理</h3>
+						<p>文件分门别类，支持全局搜索与批量操作，独有略缩图展示模式，帮助您全面掌控您的文件资源，随心所欲。</p>
+					</div>
+					<div class="pic"><img src="img/function3.jpg" alt="文件分类管理"></div>							
+				</div>
+				<div class="function_4">
+					<div class="text">
+						<h3>二维码扫描</h3>
+						<p>通过扫描二维码打开任何网页、优惠券、文件，都可以立即收藏到微云中，收藏的内容随时想用就用。方便贴心，生活必备。</p>
+					</div>
+					<div class="pic"><img src="img/function4.jpg" alt="二维码扫描"></div>						
+				</div>
+				<div class="function_5">
+					<div class="text">
+						<h3>微云传输</h3>
+						<p>超大视频、大量照片通过点对点极速传送给iPad、电脑或其他手机设备，100M的视频不用1分钟搞定，不耗流量</p>
+					</div>
+					<div class="pic"><img src="img/function5.jpg" alt="微云传输"></div>					
+				</div>
+				<div class="function_6">
+					<div class="text">
+						<h3>剪贴板</h3>
+						<p>一段文字、网址链接、电话地址，手机复制、电脑粘贴；电脑复制，手机粘贴</p>
+					</div>
+					<div class="pic"><img src="img/function6.jpg"></div>						
+				</div>
+			</div>
+		</div>
+		<div id="footer">
+			<div class="footer_main">
+				<div class="footer_pic">
+					<img src="img/logo2.png" alt="">
+				</div>
+				<div class="footer_wenzi">
+					<p>
+						<a href="">关于腾讯</a>
+						|
+						<a href="">服务条款</a>
+						|
+						<a href="">客服中心</a>
+						|
+						<a href="">粤B2-20090059-86号</a>
+					</p>
+					<p>Copyright © 1998 - 2014 Tencent. All Rights Reserved. 腾讯公司 版权所有</p>
+				</div>
+				<div class="clearfloat"></div>
+			</div>
+		</div>
+	</div>	
+</body>
+</html>

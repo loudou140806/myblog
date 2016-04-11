@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>下载</title>
+	<link rel="shortcut icon" href="img/icon.ico.gif"></title>
+</head>
+<style>
+	*{margin:0;padding:0;}
+	body{background:white;width:100%;height:100%;margin:0;overflow-x:hidden;}
+	#main{width: 100%;min-height: 1000px;}
+	.header{width: 100%;height: 80px;overflow: hidden;position: relative;border-bottom: 1px solid gray;}
+	.header .top{width: 100%;height: 80px;filter:alpha(opacity:90);opacity: 0.9;z-index: -1;background: white;position: absolute;left: 0;top: 0px;}
+	.header .nav{width: 960px;height:80px;margin: 0 auto;}
+	.header .nav .logo{width: 365px;height: 80px;float: left;}
+	.header .nav .logo a{width: 365px;height: 47px;margin-top: 15px;display: block;}
+	.header .nav .list{float: left;margin-left: 185px;height: 80px;}
+	.header .nav .list ul{list-style: none;overflow: hidden;}
+	.header .nav .list ul .current{border-bottom: 4px solid blue;padding-bottom: 0;}
+	.header .nav .list ul .current a{color: black;font-weight: bolder;}
+	.header .nav .list ul li{float: left;width: 80px;height: 76px;padding-bottom:4px;line-height: 80px;text-align: center;}
+	.header .nav .list ul li:nth-of-type(3){float: left;width:116px;height: 76px;padding-bottom:4px;line-height: 80px;text-align: center;}
+	.header .nav .list ul li a{text-decoration: none;color: #8D8D8D;font-size: "微软雅黑";font-weight: 700;}
+	.header .nav .list ul li a:hover{color:black;}
+	.header .nav .link{width: 134px;height: 80px;float: left;position: relative;}
+	.header .nav .link .btn{margin-top: 20px;margin-left: 24px;width: 110px;height: 40px;margin-top: 20px;position: absolute;}
+	.header .nav .link a{text-decoration: none;color: white;position: absolute;top: 50%;margin-top: -10px;margin-left: 40px;}
+
+	/*导航结束*/
+
+	/*content开始*/
+	.content{width: 100%;min-height: 300px;}
+	.content .content_box{width: 960px;margin: 0 auto;margin-top: 60px;}
+	.content .content_box .first{width: 960px;height:220px;overflow: hidden;}
+	.content .content_box .first li{float: left;list-style: none;width: 440px;height: 220px;margin: 0 80px 0 0;}
+	.content .content_box .first .active{margin-right: 0;}
+
+	.content .content_box{width: 960px;border-bottom: 1px solid #999999;padding-bottom: 30px;}
+	.content .content_box .second{width: 960px;height:auto;overflow: hidden;}
+	.content .content_box .second li{float: left;width: 410px;height: 90px;background: #F2F2F2;list-style: none;margin-right: 80px;margin-top: 40px;border-radius: 5px;padding: 30px 0 30px 30px;}
+	.content .content_box .second .active{margin-right: 0px;}
+	.content .content_box .second li .left{width: 200px;float: left;}
+	.content .content_box .second li .left h3{font-size: 22px; font-weight: 500;font-family: "微软雅黑";color: #333352;}
+	.content .content_box .second li .left p{width: 110px;height: 40px;background: #3091F2;border-radius: 3px;margin-top: 20px;position: relative;}
+	.content .content_box .second li .left span{position: absolute;left: 10px;top: 10px;width: 20px; height: 20px;}
+	.content .content_box .second li .left .window span{background: url(img/bg_download_btns.png) -112px 0px no-repeat;display: block;z-index: 1;}
+	.content .content_box .second li .left p a{text-decoration: none;font-size: 14px;color: white;font-family: "微软雅黑";position: absolute;right: 0;top: 0;margin-top: 10px;margin-right: 10px;}
+	.content .content_box .second li .right{float: left;font-size: 14px;line-height: 22px;color: #999999;font-family: "Microsoft YaHei"}
+
+	/*content结束*/
+
+	/*info开始*/
+		.info{width: 100%;min-height: 100px;}
+		.info .info_box{margin: 0 auto;width: 960px;height: 360px;position: relative;overflow: hidden;}
+		.info .info_box .left{width: 422px;height: 208px;background: url(img/web_img.jpg);float: left;margin-top:74px; margin-left: 10px;}
+		.info .info_box .right{width: 250px;float: left;margin-top: 120px;margin-left: 120px;}
+		.info .info_box .right h3{margin-bottom: 10px;font-size: 20px;}
+		.info .info_box .right p{font-size: 12px;margin-bottom: 10px;color: #999999;}
+		.info .info_box .right span{width: 110px;height: 40px;background: url(img/bg_download_btns.png) 0 -40px no-repeat;display: block;position: relative;}
+		.info .info_box .right span a {text-decoration: none;color: white;font-size: 14px;margin-top: 10px;position: absolute;margin-left: 20px;}
+	/*info结束*/
+
+	/*footer开始*/
+		#footer{width: 100%;height: 120px;background: #E6E6E6;position: relative;}
+		.footer_main{width: 800px;margin: 0 auto;position: relative;}
+		.footer_pic{top: 35px;left: 0;position: absolute;}
+		.footer_wenzi{width:700px;color:#999;padding:45px 0 0 130px;}
+		.footer_wenzi a{text-decoration: none;color:#999;}
+		.footer_wenzi a:hover{text-decoration: underline;}
+	/*footer结束*/
+
+</style>
+<body>
+	<div id="main">
+		<div class="header">
+			<div class="top"></div>
+			<div class="nav">
+				<div class="logo">
+					<a href="http://www.weiyun.com/index.html?WYTAG=weiyun.portal.index"><img src="img/logo.png" alt=""></a>
+				</div>
+				<div class="list">
+					<ul>
+						<li><a href="index.html">首页</a></li>
+						<li class="current"><a href="xiazai.html">下载</a></li>
+						<li><a href="gongneng.html">功能介绍</a></li>
+					</ul>
+				</div>
+				<div class="link">
+					<div class="btn"><img src="img/btn.png" alt=""></div>
+					<a href="http://www.baidu.com">网页版</a>
+				</div>
+			</div>
+		</div>
+		<div class="content">
+			<div class="content_box">
+				<ul class="first">
+					<li><img src="img/download_banner_1.jpg" alt=""></li>
+					<li class="active"><img src="img/download_banner_2.jpg" alt=""></li>
+				</ul>
+				<ul class="second">
+					<li>
+						<div class="left">
+							<h3>Windows版</h3>
+							<p class="window">
+								<span></span>
+								<a href="">立即下载</a>
+							</p>
+						</div>
+						<div class="right">
+							<p>版本：2.2 </p>
+							<p>大小：21.1MB</p>
+							<p>适用平台：XP/vista/win7/win8</p>
+							<p>更新时间：2014-08-06</p>
+						</div>
+					</li>
+					<li class="active">
+						<div class="left">
+							<h3>Windows版</h3>
+							<p class="window">
+								<span></span>
+								<a href="">立即下载</a>
+							</p>
+						</div>
+						<div class="right">
+							<p>版本：2.2 </p>
+							<p>大小：21.1MB</p>
+							<p>适用平台：XP/vista/win7/win8</p>
+							<p>更新时间：2014-08-06</p>
+						</div>
+					</li>
+					<li>
+						<div class="left">
+							<h3>Windows版</h3>
+							<p class="window">
+								<span></span>
+								<a href="">立即下载</a>
+							</p>
+						</div>
+						<div class="right">
+							<p>版本：2.2 </p>
+							<p>大小：21.1MB</p>
+							<p>适用平台：XP/vista/win7/win8</p>
+							<p>更新时间：2014-08-06</p>
+						</div>
+					</li>
+					<li class="active">
+						<div class="left">
+							<h3>Windows版</h3>
+							<p class="window">
+								<span></span>
+								<a href="">立即下载</a>
+							</p>
+						</div>
+						<div class="right">
+							<p>版本：2.2 </p>
+							<p>大小：21.1MB</p>
+							<p>适用平台：XP/vista/win7/win8</p>
+							<p>更新时间：2014-08-06</p>
+						</div>
+					</li>
+					<li>
+						<div class="left">
+							<h3>Windows版</h3>
+							<p class="window">
+								<span></span>
+								<a href="">立即下载</a>
+							</p>
+						</div>
+						<div class="right">
+							<p>版本：2.2 </p>
+							<p>大小：21.1MB</p>
+							<p>适用平台：XP/vista/win7/win8</p>
+							<p>更新时间：2014-08-06</p>
+						</div>
+					</li>
+					<li class="active">
+						<div class="left">
+							<h3>Windows版</h3>
+							<p class="window">
+								<span></span>
+								<a href="">立即下载</a>
+							</p>
+						</div>
+						<div class="right">
+							<p>版本：2.2 </p>
+							<p>大小：21.1MB</p>
+							<p>适用平台：XP/vista/win7/win8</p>
+							<p>更新时间：2014-08-06</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="info">
+			<div class="info_box">
+				<div class="left">
+					
+				</div>
+				<div class="right">
+					<h3>微云网页版</h3>
+					<p>
+						随时随地，Windows/Mac/Linux，均可访问
+						<br>简单轻便，无阻碍使用
+					</p>
+					<span>
+						<a href="">进入网页版</a>
+					</span>
+				</div>
+			</div>
+		</div>
+		<div id="footer">
+			<div class="footer_main">
+				<div class="footer_pic">
+					<img src="img/logo2.png" alt="">
+				</div>
+				<div class="footer_wenzi">
+					<p>
+						<a href="">关于腾讯</a>
+						|
+						<a href="">服务条款</a>
+						|
+						<a href="">客服中心</a>
+						|
+						<a href="">粤B2-20090059-86号</a>
+					</p>
+					<p>Copyright © 1998 - 2014 Tencent. All Rights Reserved. 腾讯公司 版权所有</p>
+				</div>
+				<div class="clearfloat"></div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

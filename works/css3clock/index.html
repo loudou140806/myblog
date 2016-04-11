@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>clock</title>
+	<style id='css'>
+	*{margin: 0;padding: 0;}
+	#wrap{ width: 200px;height: 200px;border-radius: 50%;margin: 100px auto;border: 20px solid #999;position: relative;background: #262C33;}
+	#wrap ul{margin:0;padding:0;height:200px; position:relative; list-style:none;}
+	#wrap ul li{width: 4px;height: 6px;background: #999;position: absolute;left: 98px;top: 0;-webkit-transform-origin:center 100px;font: 15px/30px "微软雅黑";font-weight: 900;border-radius: 2px;color: #2CC724;}
+	#wrap ul a{width: 4px;height: 6px;position: absolute;left: 98px;top: 0;-webkit-transform-origin:center 100px;font: 15px/30px "微软雅黑";font-weight: 900;border-radius: 2px;color: #2CC724;}
+	#wrap ul li:nth-of-type(5n+1){height: 10px;}
+	#hour{width: 6px;height: 45px;top: 55px;background: #000;position: absolute;left:97px;-webkit-transform-origin:bottom;border-radius: 3px;}
+	#min{width: 4px;height: 60px;top: 40px;background: #999;position: absolute;left:98px;-webkit-transform-origin:bottom;border-radius: 2px;}
+	#sec{width: 2px;height: 80px;top: 20px;background: red;position: absolute;left:99px;-webkit-transform-origin:bottom;border-radius: 1px;}
+	#ico{width: 20px;height: 20px;border-radius:50%;left: 90px;top:90px;position: absolute;background: red;}
+	</style>
+</head>
+<body>
+	<div id="wrap">
+		<ul id="list"></ul>
+		<div id="hour"></div>
+		<div id="min"></div>
+		<div id="sec"></div>
+		<div id="ico"></div>
+	</div>
+</body>
+
+<script>
+	window.onload=function(){
+		var oList=document.getElementById('list');
+		var oCss=document.getElementById('css');
+		var oHour=document.getElementById('hour');
+		var oMin=document.getElementById('min');
+		var oSec=document.getElementById('sec');
+		// var aA=getByClass(oList,'num');
+		var aLi="";
+		var aLi2="";
+		var sCss="";
+		// for(i=0;i<aA.length;i++){
+		// 	aA[i].style.left=-(aA[i].offsetWidth/2)+'px';
+		// }
+		for(var i=0;i<60;i++)
+		{	
+			sCss+="#wrap ul li:nth-of-type("+(i+1)+"){-webkit-transform:rotate("+i*6+"deg)}";
+				aLi+="<li></li>";
+		}
+		for(i=0;i<12;i++){
+			sCss+="#wrap ul a:nth-of-type("+(i+1)+"){-webkit-transform:rotate("+(i*30-3)+"deg)}";
+			sCss+="#wrap ul a b:nth-of-type("+(i+1)+"){-webkit-transform:rotate("+(-i*30)+"deg)}";
+			if(i===0){
+				aLi2+="<a class='num'><b>"+12+"</b></a>";
+			}
+			else
+			{
+				aLi2+="<a class='num'><b>"+i+"</b></a>";
+			}
+		}
+		oList.innerHTML=aLi;
+		oList.innerHTML+=aLi2;
+		oCss.innerHTML+=sCss;
+		setInterval(toMove,1000);
+		function toMove(){
+			var oDate=new Date();
+			var iSec=oDate.getSeconds();
+			var iMin=oDate.getMinutes()+iSec/60;
+			var iHour=oDate.getHours()+iMin/60;
+			
+			oSec.style.webkitTransform="rotate("+(iSec*6)+"deg)";
+			oMin.style.webkitTransform="rotate("+(iMin*6)+"deg)";
+			oHour.style.webkitTransform="rotate("+(iHour*30)+"deg)";
+		}
+		// function getByClass(oParent,oClass)
+		// {
+		// 	var aEle=oParent.getElementsByTagName('*');
+		// 	var i=0;
+		// 	var aResult=[];
+		// 	var re=new RegExp('\\b'+oClass+'\\b');
+			
+		// 	for(i=0;i<aEle.length;i++)
+		// 	{
+		// 		//if(aEle[i].className==oClass)
+		// 		if(re.test(aEle[i].className))
+		// 		{
+		// 			aResult.push(aEle[i]);
+		// 		}
+		// 	}
+		// 	return aResult;
+		// }
+	}
+</script>
+</html>

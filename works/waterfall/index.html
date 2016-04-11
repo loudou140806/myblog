@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<style>
+#ul1{width: 1080px;height: auto;margin: 0 auto;}
+li{float: left;list-style: none;margin: 10px 10px;width: 245px;}
+img{display: block;width: 225px;}
+div{border: 1px solid #000;padding: 10px;margin-bottom: 10px;}
+</style>
+	<script src="ajax.js"></script>
+<script>
+window.onload=function(){
+
+	var oUl = document.getElementById('ul1');
+	var aLi = document.getElementsByTagName('li');
+	var iLen = aLi.length;
+	var iPage = 1;
+	var b = true;
+
+	getList();
+
+	function getList(){
+		ajax('get','getPics.php','cPage=' + iPage,function(data){
+
+				var data=JSON.parse(data);
+
+				if(!data.length){
+					return;
+				}
+
+				for(i=0;i<data.length;i++)
+				{
+					var oDiv=document.createElement('div');
+					var oImg=document.createElement('img');
+					var oP=document.createElement('p');
+
+					oImg.src=data[i].image;
+					oImg.style.width='225px';
+					oImg.style.height=data[i].height * ( 225 /data[i].width );
+					oP.innerHTML=data[i].title;
+					var index=getMin();
+
+					oDiv.appendChild(oImg);
+					oDiv.appendChild(oP);
+					aLi[index].appendChild(oDiv);
+
+				}
+
+				b=true;
+		})
+	}
+
+
+	window.onscroll=function(){
+		var index=getMin();
+
+		var scrollTop=document.documentElement.scrollTop||document.body.scrollTop;
+		var bottom_height=aLi[index].offsetTop+aLi[index].offsetHeight;
+		if(bottom_height<(scrollTop+document.documentElement.clientHeight)){
+			if(b)
+			{
+				b=false;
+				iPage++;
+				getList();
+			}
+		}
+	}
+
+	function getMin(){
+		var x=0;
+		var height=aLi[x].offsetHeight;
+		for(var i=0;i<iLen;i++){
+				if(height>aLi[i].offsetHeight)
+				{
+					height=this.offsetHeight;
+					x=i;
+				}
+		}
+		return x;
+	}
+}
+</script>
+</head>
+<body>
+	<ul id="ul1">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+</body>
+</html>

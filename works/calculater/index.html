@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{margin: 0;padding: 0;}
+	body{background: #00779E;}
+	#content{width: 500px;height: 500px;margin: 0 auto;background:#00779E; position: relative;}
+	#content h3{margin: 0 auto;width: 100px;height: 24px;margin-top: 100px;color: white;font-family: "Microsoft Yahei";}
+	#calc{width:300px;height: 220px;margin: 0 auto;border: 4px solid #005774;background: #0093C4;margin-top: 100px;}
+	#calc h2{width: 243px;margin-left: 25px;margin-top:10px;}
+	#calc h2 input{width: 223px;height:30px;background: url(img/ico.png) 0px 0px no-repeat;border: none;padding-left: 10px;padding-right: 10px;font-weight: bold;font-size: 14px;color: #333;text-align: right;}
+	#calc ul{width: 280px;height: 150px;margin-top: 10px;margin-left: 15px;overflow: hidden;}
+	#calc ul li{float: left;width: 60px; height: 30px;list-style: none;line-height: 30px;text-align: center;margin-bottom: 10px;margin-right: 10px;background: url(img/ico.png) -303px 0px no-repeat;cursor: pointer;}
+	#calc ul li:hover{background: url(img/ico.png) -244px 0 no-repeat;}
+	</style>
+	<script>
+	var oCalc='';
+	var sNum1='';
+	var bNeedClear=false;
+
+	function calculate (num1, num2, oCalc) {
+		var oResult=0;
+		switch(oCalc) {
+			case '+':
+				oResult=num1+num2;
+				break;
+			case '-':
+				oResult=num1-num2;
+				break;
+			case '×':
+				oResult=num1*num2;
+				break;
+			case '÷':
+				oResult=num1/num2;
+				break;
+			default:
+				oResult=num2;
+		}
+		return oResult;
+	}
+
+	function doInput(){
+
+		var oInput=document.getElementById('input1');
+		var sHtml= this.innerHTML.replace(' ','');
+
+		switch(sHtml) {
+			case '=':
+				oInput.value=calculate(parseInt(sNum1, 10), parseInt(oInput.value, 10), oCalc);
+				sNum1=oInput.value;
+				oCalc='';
+				bNeedClear=true;
+				break;
+			case '+':
+			case '-':
+			case '×':
+			case '÷':
+				bNeedClear=true;
+				
+				// if(sNum1.length!==0){
+				// 	oInput.value=calculate(parseInt(sNum1, 10), parseInt(oInput.value, 10), oCalc);
+				// }
+				oCalc=sHtml;
+				sNum1=oInput.value;
+				break;
+			case'C':
+				oInput.value='0';
+				sNum1='';
+				oClac='';
+				break;
+			default:
+			if(bNeedClear)
+				{
+					oInput.value=parseInt(sHtml, 10);
+					bNeedClear=false;
+				}
+				else
+				{
+					oInput.value=parseInt(oInput.value+sHtml, 10);
+				}
+				break;
+		}
+
+	}
+
+	window.onload=function()
+	{
+		var aLi=document.getElementsByTagName('li');
+		
+		for(var i = 0; i<aLi.length;i++ )
+		{	
+			aLi[i].onmousedown=doInput;
+		}
+	}
+	
+	</script>
+</head>
+<body>
+	<div id="content">
+		<h3>简易计算器</h3>
+		<div id="calc">
+			<h2><input type="text" value="0" id="input1"></h2>
+			<ul>
+				<li>7</li>
+				<li>8</li>
+				<li>9</li>
+				<li>+</li>
+				<li>4</li>
+				<li>5</li>
+				<li>6</li>
+				<li>-</li>
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>×</li>
+				<li>0</li>
+				<li>C</li>
+				<li>=</li>
+				<li>÷</li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>
