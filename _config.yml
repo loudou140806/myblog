@@ -54,6 +54,8 @@ nav:
     url: /myblog/archives.html
   - text: 作品
     url: /myblog/works.html
+  - text: resume
+    url: /resume/index.html
 
 #配置你喜欢的顶部背景图片
 headimg:
