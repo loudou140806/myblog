@@ -34,3 +34,5 @@ keys: 好文推荐2
 - <a href="http://mp.weixin.qq.com/s?__biz=MzA4OTc4MTM0OA==&mid=2650358073&idx=1&sn=fb2b01f2a39eddef728851b4d9b9ab53#rd"> react-native开源项目第二波</a>
 - <a href="http://mp.weixin.qq.com/s?__biz=MzA4OTc4MTM0OA==&mid=502874320&idx=1&sn=c8bc64a95d3f7ab6dbbcece7405877cf#rd"> react-native开源项目第一波</a>
 - <a href="https://zhuanlan.zhihu.com/p/20598089"> 为什么整个互联网都缺前端工程师</a>
+- <a href="http://www.jianshu.com/p/c271c1b05308">一名全站工程师的Mac工具箱（设计，开发，效率）</a>
+- <a href="https://isux.tencent.com/flexbox.html">移动端全兼容的flexbox速成班</a>
