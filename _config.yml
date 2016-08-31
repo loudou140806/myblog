@@ -1,8 +1,8 @@
 # Where things are
 source:       .
 destination:  ./_site
-plugins:      ./_plugins
-layouts:      ./_layouts
+plugins_dir:      ./_plugins
+layouts_dir:      ./_layouts
 paginate:     8
 
 # Handling Reading
@@ -13,6 +13,7 @@ keep_files:   [".git", ".svn"]
 encoding:     "utf-8"
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 textile_ext:  "textile"
+gems: [jekyll-paginate]
 
 # Filtering Content
 show_drafts:  null
@@ -49,23 +50,23 @@ feed: /atom.xml
 #菜单配置
 nav:
   - text: 首页
-    url: /myblog/index.html
+    url: ./index.html
   - text: 文章归档
-    url: /myblog/archives.html
+    url: ./archives.html
   - text: 作品
-    url: /myblog/works.html
+    url: ./works.html
   - text: resume
     url: /resume/index.html
 
 #配置你喜欢的顶部背景图片
 headimg:
-  - item: /myblog/images/hdbg01.jpg
-  - item: /myblog/images/hdbg02.jpg
-  - item: /myblog/images/hdbg03.jpg
-  - item: /myblog/images/hdbg04.jpg
-  - item: /myblog/images/hdbg05.jpg
-  - item: /myblog/images/hdbg06.jpg
-  - item: /myblog/images/hdbg07.jpg
+  - item: http://7xlg9s.com1.z0.glb.clouddn.com/hdbg01.jpg
+  - item: http://7xlg9s.com1.z0.glb.clouddn.com/hdbg02.jpg
+  - item: http://7xlg9s.com1.z0.glb.clouddn.com/hdbg03.jpg
+  - item: http://7xlg9s.com1.z0.glb.clouddn.com/hdbg04.jpg
+  - item: http://7xlg9s.com1.z0.glb.clouddn.com/hdbg05.jpg
+  - item: http://7xlg9s.com1.z0.glb.clouddn.com/hdbg06.jpg
+  - item: http://7xlg9s.com1.z0.glb.clouddn.com/hdbg07.jpg
 
 #关注我
 follow:
