@@ -3,3 +3,7 @@ _site
 .idea/
 drafts
 archive.zip
+
+.cache/
+
+node_modules/

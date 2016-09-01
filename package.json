@@ -1,0 +1,25 @@
+{
+  "name": "myblog",
+  "version": "1.0.0",
+  "description": "Blog of Frank",
+  "main": "index.js",
+  "dependencies": {
+    "clam": "^1.0.12"
+  },
+  "devDependencies": {
+    "clam": "^1.0.12"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/loudou140806/myblog.git"
+  },
+  "author": "Frank",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/loudou140806/myblog/issues"
+  },
+  "homepage": "https://github.com/loudou140806/myblog#readme"
+}

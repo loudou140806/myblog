@@ -139,15 +139,15 @@ $(document).ready(function() {
             },1200,"easeOutCubic");
             $articleList.on({
                 mouseenter: function(){
+                    alert(1);
                     marL = parseInt($articleList.parent().outerWidth() - $articleList.outerWidth())/2;
-                    console.log('marL' + marL );
                     $(this).animate({
-                        marginLeft: marL>0?(marL - 30 + "px"):0
+                        marginLeft: marL > 0 ? ( marL - 30 + "px" ) : 0
                     },30,"easeOutCubic");
                 },mouseleave: function() {
                     marL = parseInt($articleList.parent().outerWidth() - $articleList.outerWidth())/2;
                     $(this).animate({
-                        marginLeft: marL>0?marL:0
+                        marginLeft: marL > 0 ? marL : 0
                     },30,"easeOutCubic");
                 }
             });
